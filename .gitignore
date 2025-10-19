@@ -14,6 +14,11 @@ solutions/
 references*
 skills*
 
+# Environment variables and secrets
+.env.local
+.env
+*.env
+
 # Jupyter Book build artifacts
 docs/_build/
 docs/.jupyter_cache/
