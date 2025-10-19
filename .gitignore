@@ -8,3 +8,28 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Hidden training materials (solutions, answer keys, instructor notes)
+solutions/
+references*
+skills*
+
+# Jupyter Book build artifacts
+docs/_build/
+docs/.jupyter_cache/
+.jupyter_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,55 @@
+# Table of Contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+chapters:
+  - file: getting-started/index
+    title: Getting Started
+    sections:
+      - file: getting-started/installation
+      - file: getting-started/setup
+      - file: getting-started/how-to-use
+
+  - file: data-science/index
+    title: Data Science & Analysis
+    sections:
+      - file: data-science/lessons/index
+        title: Lessons
+      - file: data-science/exercises/index
+        title: Exercises
+      - file: data-science/projects/index
+        title: Projects
+
+  - file: web-development/index
+    title: Web Development
+    sections:
+      - file: web-development/lessons/index
+        title: Lessons
+      - file: web-development/exercises/index
+        title: Exercises
+      - file: web-development/projects/index
+        title: Projects
+
+  - file: automation/index
+    title: Automation & Scripting
+    sections:
+      - file: automation/lessons/index
+        title: Lessons
+      - file: automation/exercises/index
+        title: Exercises
+      - file: automation/projects/index
+        title: Projects
+
+  - file: testing/index
+    title: Testing & Quality
+    sections:
+      - file: testing/lessons/index
+        title: Lessons
+      - file: testing/exercises/index
+        title: Exercises
+      - file: testing/projects/index
+        title: Projects
+
+  - file: references/index
+    title: Reference Materials

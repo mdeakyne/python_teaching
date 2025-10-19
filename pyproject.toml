@@ -4,4 +4,20 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "beautifulsoup4>=4.14.2",
+    "click>=8.3.0",
+    "fastapi>=0.119.0",
+    "httpx>=0.28.1",
+    "ipykernel>=7.0.1",
+    "jupyter-book>=1.0.4.post1",
+    "matplotlib>=3.10.7",
+    "mypy>=1.18.2",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "pytest>=8.4.2",
+    "requests>=2.32.5",
+    "ruff>=0.14.1",
+    "seaborn>=0.13.2",
+    "typer>=0.19.2",
+]
