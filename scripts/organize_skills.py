@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Skill Organizer using Azure AI Foundry
+Skill Organizer using Microsoft Agent Framework with Azure OpenAI
 
 Takes extracted skills from multiple books, maps them to learning tracks,
 deduplicates similar skills, and generates individual skill markdown files.
@@ -17,8 +17,7 @@ from dotenv import load_dotenv
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.table import Table
-from azure.ai.projects import AIProjectClient
-from azure.identity import DefaultAzureCredential
+from azure.ai.agents import AIAgent, create_agent_client
 from pydantic import BaseModel, Field
 
 
@@ -53,8 +52,8 @@ class TrackMapping(BaseModel):
     reasoning: str
 
 
-class AzureAITrackMapper:
-    """Azure AI agent for mapping skills to tracks"""
+class AzureOpenAITrackMapper:
+    """Azure OpenAI agent for mapping skills to tracks via Microsoft Agent Framework"""
 
     TRACKS = [
         "data-science",
@@ -66,26 +65,32 @@ class AzureAITrackMapper:
     def __init__(self):
         load_dotenv(".env.local")
 
-        connection_string = os.getenv("AZURE_PROJECT_CONNECTION_STRING")
-        if not connection_string:
-            console.print("[red]Error: AZURE_PROJECT_CONNECTION_STRING not set[/red]")
+        self.api_key = os.getenv("AZURE_API_KEY")
+        self.endpoint = os.getenv("AZURE_ENDPOINT")
+        self.api_version = os.getenv("AZURE_API_VERSION", "2025-04-01-preview")
+        self.deployment = os.getenv("AZURE_CHAT_DEPLOYMENT_NAME", "gpt-4o")
+
+        if not self.api_key or not self.endpoint:
+            console.print("[red]Error: AZURE_API_KEY and AZURE_ENDPOINT must be set in .env.local[/red]")
             sys.exit(1)
 
-        self.client = AIProjectClient.from_connection_string(
-            credential=DefaultAzureCredential(),
-            conn_str=connection_string
-        )
+        try:
+            self.client = create_agent_client(
+                api_key=self.api_key,
+                endpoint=self.endpoint,
+                api_version=self.api_version
+            )
+        except Exception as e:
+            console.print(f"[red]Error creating agent client: {e}[/red]")
+            sys.exit(1)
 
         self.agent = None
 
     def create_mapping_agent(self):
         """Create agent for track mapping"""
-        console.print("[cyan]Creating Azure AI agent for track mapping...[/cyan]")
+        console.print("[cyan]Creating Azure OpenAI agent for track mapping...[/cyan]")
 
-        self.agent = self.client.agents.create_agent(
-            model=os.getenv("AZURE_AI_MODEL_DEPLOYMENT", "gpt-4"),
-            name="skill-track-mapper",
-            instructions=f"""You are an expert Python curriculum designer mapping skills to learning tracks.
+        system_message = f"""You are an expert Python curriculum designer mapping skills to learning tracks.
 
 Available tracks:
 - data-science: Data analysis, pandas, numpy, visualization, statistics
@@ -106,53 +111,51 @@ Return ONLY a valid JSON object:
 }}
 
 Map skills to the most relevant tracks. A skill can belong to multiple tracks if applicable."""
-        )
 
-        console.print(f"[green]✓ Agent created: {self.agent.id}[/green]")
+        try:
+            self.agent = AIAgent(
+                client=self.client,
+                model=self.deployment,
+                system_message=system_message,
+                name="skill-track-mapper"
+            )
+            console.print(f"[green]✓ Agent created with model: {self.deployment}[/green]")
+        except Exception as e:
+            console.print(f"[red]Error creating agent: {e}[/red]")
+            sys.exit(1)
+
         return self.agent
 
     def map_skill_to_tracks(self, skill: Skill) -> TrackMapping:
         """Map a single skill to tracks"""
-        # Create thread
-        thread = self.client.agents.create_thread()
-
         # Prepare skill info
         skill_info = f"""Skill: {skill.name}
 Description: {skill.description}
 Category: {skill.category}
 Key Concepts: {', '.join(skill.key_concepts)}"""
 
-        # Send for mapping
-        message = self.client.agents.create_message(
-            thread_id=thread.id,
-            role="user",
-            content=f"Map this skill to learning tracks:\n\n{skill_info}"
-        )
+        try:
+            prompt = f"Map this skill to learning tracks:\n\n{skill_info}"
+            response = self.agent.complete(prompt)
 
-        # Run agent
-        run = self.client.agents.create_and_process_run(
-            thread_id=thread.id,
-            agent_id=self.agent.id
-        )
+            # Extract text from response
+            if hasattr(response, 'content'):
+                response_text = response.content
+            elif isinstance(response, str):
+                response_text = response
+            else:
+                response_text = str(response)
 
-        # Get response
-        messages = self.client.agents.list_messages(thread_id=thread.id)
+            # Parse JSON
+            start = response_text.find('{')
+            end = response_text.rfind('}') + 1
+            if start >= 0 and end > start:
+                json_text = response_text[start:end]
+                mapping_data = json.loads(json_text)
+                return TrackMapping(**mapping_data)
 
-        for msg in messages:
-            if msg.role == "assistant":
-                if hasattr(msg, 'content') and len(msg.content) > 0:
-                    response_text = msg.content[0].text.value
-
-                    try:
-                        # Parse JSON
-                        start = response_text.find('{')
-                        end = response_text.rfind('}') + 1
-                        if start >= 0 and end > start:
-                            json_text = response_text[start:end]
-                            mapping_data = json.loads(json_text)
-                            return TrackMapping(**mapping_data)
-                    except json.JSONDecodeError as e:
-                        console.print(f"[yellow]Warning: Could not parse mapping for {skill.name}[/yellow]")
+        except Exception as e:
+            console.print(f"[yellow]Warning: Could not map {skill.name}: {e}[/yellow]")
 
         # Fallback: guess based on category
         return self._guess_tracks_from_category(skill)
@@ -228,7 +231,6 @@ def deduplicate_skills(skills: List[Skill]) -> List[OrganizedSkill]:
             ))
         else:
             # Merge multiple occurrences
-            # Use the first one as base, merge key_concepts and sources
             base_skill = skill_list[0]
             all_concepts = set(base_skill.key_concepts)
             all_sources = [base_skill.source_book]
@@ -252,7 +254,7 @@ def deduplicate_skills(skills: List[Skill]) -> List[OrganizedSkill]:
 
 def map_skills_to_tracks(
     organized_skills: List[OrganizedSkill],
-    mapper: AzureAITrackMapper
+    mapper: AzureOpenAITrackMapper
 ) -> List[OrganizedSkill]:
     """Map each skill to appropriate tracks"""
     console.print("[cyan]Mapping skills to learning tracks...[/cyan]\n")
@@ -374,7 +376,7 @@ def generate_index(organized_skills: List[OrganizedSkill], skills_dir: Path):
 def main():
     """Main entry point"""
     console.print("[bold magenta]Skill Organizer & Track Mapper[/bold magenta]")
-    console.print("Using Azure AI Foundry\n")
+    console.print("Using Microsoft Agent Framework with Azure OpenAI\n")
 
     # Setup paths
     project_root = Path(__file__).parent.parent
@@ -395,12 +397,12 @@ def main():
     # Deduplicate
     organized_skills = deduplicate_skills(all_skills)
 
-    # Initialize Azure AI mapper
+    # Initialize Azure OpenAI mapper
     try:
-        mapper = AzureAITrackMapper()
+        mapper = AzureOpenAITrackMapper()
         mapper.create_mapping_agent()
     except Exception as e:
-        console.print(f"[red]Error initializing Azure AI: {e}[/red]")
+        console.print(f"[red]Error initializing Azure OpenAI: {e}[/red]")
         sys.exit(1)
 
     # Map to tracks

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Skill Extractor using Azure AI Foundry
+Skill Extractor using Microsoft Agent Framework with Azure OpenAI
 
-Reads markdown files from converted PDFs and uses Azure AI agents to extract
+Reads markdown files from converted PDFs and uses Azure OpenAI agents to extract
 discrete Python skills, concepts, and learning points.
 """
 
@@ -15,8 +15,7 @@ from typing import List, Optional
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
-from azure.ai.projects import AIProjectClient
-from azure.identity import DefaultAzureCredential
+from azure.ai.agents import AIAgent, create_agent_client
 from pydantic import BaseModel, Field
 
 
@@ -43,33 +42,38 @@ class SkillExtraction(BaseModel):
     metadata: dict = Field(default_factory=dict)
 
 
-class AzureAISkillExtractor:
-    """Wrapper for Azure AI Foundry agent for skill extraction"""
+class AzureOpenAISkillExtractor:
+    """Wrapper for Azure OpenAI via Microsoft Agent Framework for skill extraction"""
 
     def __init__(self):
         load_dotenv(".env.local")
 
-        connection_string = os.getenv("AZURE_PROJECT_CONNECTION_STRING")
+        self.api_key = os.getenv("AZURE_API_KEY")
+        self.endpoint = os.getenv("AZURE_ENDPOINT")
+        self.api_version = os.getenv("AZURE_API_VERSION", "2025-04-01-preview")
+        self.deployment = os.getenv("AZURE_CHAT_DEPLOYMENT_NAME", "gpt-4o")
 
-        if not connection_string:
-            console.print("[red]Error: AZURE_PROJECT_CONNECTION_STRING not set in .env.local[/red]")
+        if not self.api_key or not self.endpoint:
+            console.print("[red]Error: AZURE_API_KEY and AZURE_ENDPOINT must be set in .env.local[/red]")
             sys.exit(1)
 
-        self.client = AIProjectClient.from_connection_string(
-            credential=DefaultAzureCredential(),
-            conn_str=connection_string
-        )
+        try:
+            self.client = create_agent_client(
+                api_key=self.api_key,
+                endpoint=self.endpoint,
+                api_version=self.api_version
+            )
+        except Exception as e:
+            console.print(f"[red]Error creating agent client: {e}[/red]")
+            sys.exit(1)
 
         self.agent = None
 
     def create_skill_extraction_agent(self):
         """Create an agent specialized in extracting Python skills"""
-        console.print("[cyan]Creating Azure AI agent for skill extraction...[/cyan]")
+        console.print("[cyan]Creating Azure OpenAI agent for skill extraction...[/cyan]")
 
-        self.agent = self.client.agents.create_agent(
-            model=os.getenv("AZURE_AI_MODEL_DEPLOYMENT", "gpt-4"),
-            name="python-skill-extractor",
-            instructions="""You are an expert Python educator analyzing technical content to extract discrete, teachable skills.
+        system_message = """You are an expert Python educator analyzing technical content to extract discrete, teachable skills.
 
 Your task is to:
 1. Read technical content about Python
@@ -99,56 +103,56 @@ Return ONLY a valid JSON array of skill objects following this structure:
 ]
 
 Be specific and practical. Focus on skills that can be taught and practiced."""
-        )
 
-        console.print(f"[green]✓ Agent created: {self.agent.id}[/green]")
+        try:
+            self.agent = AIAgent(
+                client=self.client,
+                model=self.deployment,
+                system_message=system_message,
+                name="python-skill-extractor"
+            )
+            console.print(f"[green]✓ Agent created with model: {self.deployment}[/green]")
+        except Exception as e:
+            console.print(f"[red]Error creating agent: {e}[/red]")
+            sys.exit(1)
+
         return self.agent
 
     def extract_skills_from_content(self, content: str, book_name: str) -> List[Skill]:
         """Extract skills from markdown content"""
-        # Create a thread
-        thread = self.client.agents.create_thread()
+        try:
+            prompt = f"Extract Python skills from this content:\n\n{content[:8000]}"  # Limit size
+            response = self.agent.complete(prompt)
 
-        # Send content for analysis
-        message = self.client.agents.create_message(
-            thread_id=thread.id,
-            role="user",
-            content=f"Extract Python skills from this content:\n\n{content[:8000]}"  # Limit size
-        )
+            # Extract text from response
+            if hasattr(response, 'content'):
+                response_text = response.content
+            elif isinstance(response, str):
+                response_text = response
+            else:
+                response_text = str(response)
 
-        # Run the agent
-        run = self.client.agents.create_and_process_run(
-            thread_id=thread.id,
-            agent_id=self.agent.id
-        )
+            # Try to parse JSON from response
+            try:
+                # Look for JSON array in the response
+                start = response_text.find('[')
+                end = response_text.rfind(']') + 1
+                if start >= 0 and end > start:
+                    json_text = response_text[start:end]
+                    skills_data = json.loads(json_text)
 
-        # Get the response
-        messages = self.client.agents.list_messages(thread_id=thread.id)
+                    # Convert to Skill objects
+                    skills = []
+                    for skill_dict in skills_data:
+                        skill_dict['source_book'] = book_name
+                        skills.append(Skill(**skill_dict))
+                    return skills
+            except json.JSONDecodeError as e:
+                console.print(f"[yellow]Warning: Could not parse JSON response: {e}[/yellow]")
+                console.print(f"Response: {response_text[:200]}...")
 
-        # Extract and parse the JSON response
-        for msg in messages:
-            if msg.role == "assistant":
-                if hasattr(msg, 'content') and len(msg.content) > 0:
-                    response_text = msg.content[0].text.value
-
-                    # Try to parse JSON from response
-                    try:
-                        # Look for JSON array in the response
-                        start = response_text.find('[')
-                        end = response_text.rfind(']') + 1
-                        if start >= 0 and end > start:
-                            json_text = response_text[start:end]
-                            skills_data = json.loads(json_text)
-
-                            # Convert to Skill objects
-                            skills = []
-                            for skill_dict in skills_data:
-                                skill_dict['source_book'] = book_name
-                                skills.append(Skill(**skill_dict))
-                            return skills
-                    except json.JSONDecodeError as e:
-                        console.print(f"[yellow]Warning: Could not parse JSON response: {e}[/yellow]")
-                        console.print(f"Response: {response_text[:200]}...")
+        except Exception as e:
+            console.print(f"[yellow]Warning: Error extracting skills: {e}[/yellow]")
 
         return []
 
@@ -156,7 +160,7 @@ Be specific and practical. Focus on skills that can be taught and practiced."""
 def process_markdown_file(
     markdown_path: Path,
     book_name: str,
-    extractor: AzureAISkillExtractor
+    extractor: AzureOpenAISkillExtractor
 ) -> SkillExtraction:
     """Process a markdown file and extract skills"""
     console.print(f"\n[bold blue]Processing: {markdown_path.name}[/bold blue]")
@@ -205,7 +209,7 @@ def process_markdown_file(
 def main():
     """Main entry point"""
     console.print("[bold magenta]Python Skill Extractor[/bold magenta]")
-    console.print("Using Azure AI Foundry\n")
+    console.print("Using Microsoft Agent Framework with Azure OpenAI\n")
 
     # Get project root
     project_root = Path(__file__).parent.parent
@@ -219,12 +223,12 @@ def main():
         console.print("Run pdf_to_markdown.py first to convert PDFs")
         sys.exit(1)
 
-    # Initialize Azure AI client
+    # Initialize Azure OpenAI client
     try:
-        extractor = AzureAISkillExtractor()
+        extractor = AzureOpenAISkillExtractor()
         extractor.create_skill_extraction_agent()
     except Exception as e:
-        console.print(f"[red]Error initializing Azure AI: {e}[/red]")
+        console.print(f"[red]Error initializing Azure OpenAI: {e}[/red]")
         sys.exit(1)
 
     # Find all markdown files to process

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-PDF to Markdown Converter using Azure AI Foundry
+PDF to Markdown Converter using Microsoft Agent Framework with Azure OpenAI
 
-Extracts text from PDF books and uses Azure AI agents to convert them
+Extracts text from PDF books and uses Azure OpenAI agents to convert them
 to well-structured markdown with preserved code blocks and formatting.
 """
 
@@ -16,9 +16,7 @@ from dotenv import load_dotenv
 from pypdf import PdfReader
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
-from azure.ai.projects import AIProjectClient
-from azure.identity import DefaultAzureCredential
-from azure.ai.projects.models import Agent, AgentThread, ThreadMessage
+from azure.ai.agents import AIAgent, create_agent_client
 from pydantic import BaseModel
 
 
@@ -62,37 +60,41 @@ PRIORITY_BOOKS = [
 ]
 
 
-class AzureAIClient:
-    """Wrapper for Azure AI Foundry agent interactions"""
+class AzureOpenAIClient:
+    """Wrapper for Azure OpenAI via Microsoft Agent Framework"""
 
     def __init__(self):
         load_dotenv(".env.local")
 
         # Get configuration from environment
-        connection_string = os.getenv("AZURE_PROJECT_CONNECTION_STRING")
+        self.api_key = os.getenv("AZURE_API_KEY")
+        self.endpoint = os.getenv("AZURE_ENDPOINT")
+        self.api_version = os.getenv("AZURE_API_VERSION", "2025-04-01-preview")
+        self.deployment = os.getenv("AZURE_CHAT_DEPLOYMENT_NAME", "gpt-4o")
 
-        if not connection_string:
-            console.print("[red]Error: AZURE_PROJECT_CONNECTION_STRING not set in .env.local[/red]")
+        if not self.api_key or not self.endpoint:
+            console.print("[red]Error: AZURE_API_KEY and AZURE_ENDPOINT must be set in .env.local[/red]")
             console.print("Please copy .env.local.template to .env.local and fill in your credentials")
             sys.exit(1)
 
-        # Initialize the Azure AI Project client
-        self.client = AIProjectClient.from_connection_string(
-            credential=DefaultAzureCredential(),
-            conn_str=connection_string
-        )
+        # Initialize the agent client
+        try:
+            self.client = create_agent_client(
+                api_key=self.api_key,
+                endpoint=self.endpoint,
+                api_version=self.api_version
+            )
+        except Exception as e:
+            console.print(f"[red]Error creating agent client: {e}[/red]")
+            sys.exit(1)
 
         self.agent = None
-        self.thread = None
 
     def create_markdown_agent(self):
         """Create an agent specialized in converting PDF text to markdown"""
-        console.print("[cyan]Creating Azure AI agent for markdown conversion...[/cyan]")
+        console.print("[cyan]Creating Azure OpenAI agent for markdown conversion...[/cyan]")
 
-        self.agent = self.client.agents.create_agent(
-            model=os.getenv("AZURE_AI_MODEL_DEPLOYMENT", "gpt-4"),
-            name="pdf-to-markdown-converter",
-            instructions="""You are an expert at converting technical book content to clean, well-structured markdown.
+        system_message = """You are an expert at converting technical book content to clean, well-structured markdown.
 
 Your tasks:
 1. Take raw PDF text and convert it to proper markdown format
@@ -103,40 +105,38 @@ Your tasks:
 6. Preserve technical accuracy
 
 Output only the cleaned markdown without any explanations."""
-        )
 
-        console.print(f"[green]✓ Agent created: {self.agent.id}[/green]")
+        try:
+            self.agent = AIAgent(
+                client=self.client,
+                model=self.deployment,
+                system_message=system_message,
+                name="pdf-to-markdown-converter"
+            )
+            console.print(f"[green]✓ Agent created with model: {self.deployment}[/green]")
+        except Exception as e:
+            console.print(f"[red]Error creating agent: {e}[/red]")
+            sys.exit(1)
+
         return self.agent
 
     def process_text_chunk(self, text: str) -> str:
         """Process a text chunk through the agent"""
-        # Create a thread for this interaction
-        thread = self.client.agents.create_thread()
+        try:
+            prompt = f"Convert this PDF text to clean markdown:\n\n{text}"
+            response = self.agent.complete(prompt)
 
-        # Send the text to process
-        message = self.client.agents.create_message(
-            thread_id=thread.id,
-            role="user",
-            content=f"Convert this PDF text to clean markdown:\n\n{text}"
-        )
+            # Extract text from response
+            if hasattr(response, 'content'):
+                return response.content
+            elif isinstance(response, str):
+                return response
+            else:
+                return str(response)
 
-        # Run the agent
-        run = self.client.agents.create_and_process_run(
-            thread_id=thread.id,
-            agent_id=self.agent.id
-        )
-
-        # Get the response
-        messages = self.client.agents.list_messages(thread_id=thread.id)
-
-        # Extract the markdown from the last assistant message
-        for msg in messages:
-            if msg.role == "assistant":
-                # Get the text content from the message
-                if hasattr(msg, 'content') and len(msg.content) > 0:
-                    return msg.content[0].text.value
-
-        return text  # Fallback to original if processing fails
+        except Exception as e:
+            console.print(f"[yellow]Warning: Error processing chunk: {e}[/yellow]")
+            return text  # Return original text if processing fails
 
 
 def extract_text_from_pdf(pdf_path: Path) -> list[str]:
@@ -184,7 +184,7 @@ def chunk_pages(pages: list[str], chunk_size: int = 2000) -> list[str]:
     return chunks
 
 
-def process_book(book: BookConfig, azure_client: AzureAIClient, references_dir: Path):
+def process_book(book: BookConfig, azure_client: AzureOpenAIClient, references_dir: Path):
     """Process a single book: extract PDF, convert to markdown"""
     console.print(f"\n[bold blue]Processing: {book.filename}[/bold blue]")
     console.print(f"Description: {book.description}")
@@ -205,9 +205,9 @@ def process_book(book: BookConfig, azure_client: AzureAIClient, references_dir: 
     chunk_size = int(os.getenv("PDF_CHUNK_SIZE", "2000"))
     chunks = chunk_pages(pages, chunk_size)
 
-    console.print(f"[cyan]Processing {len(chunks)} chunks through Azure AI...[/cyan]")
+    console.print(f"[cyan]Processing {len(chunks)} chunks through Azure OpenAI...[/cyan]")
 
-    # Process each chunk through Azure AI
+    # Process each chunk through Azure OpenAI
     markdown_chunks = []
     with Progress(
         SpinnerColumn(),
@@ -255,7 +255,7 @@ def process_book(book: BookConfig, azure_client: AzureAIClient, references_dir: 
 def main():
     """Main entry point"""
     console.print("[bold magenta]PDF to Markdown Converter[/bold magenta]")
-    console.print("Using Azure AI Foundry\n")
+    console.print("Using Microsoft Agent Framework with Azure OpenAI\n")
 
     # Get project root
     project_root = Path(__file__).parent.parent
@@ -265,12 +265,12 @@ def main():
         console.print(f"[red]Error: References directory not found at {references_dir}[/red]")
         sys.exit(1)
 
-    # Initialize Azure AI client
+    # Initialize Azure OpenAI client
     try:
-        azure_client = AzureAIClient()
+        azure_client = AzureOpenAIClient()
         azure_client.create_markdown_agent()
     except Exception as e:
-        console.print(f"[red]Error initializing Azure AI: {e}[/red]")
+        console.print(f"[red]Error initializing Azure OpenAI: {e}[/red]")
         console.print("[yellow]Make sure you've set up .env.local with your Azure credentials[/yellow]")
         sys.exit(1)
 
@@ -302,6 +302,8 @@ def main():
             sys.exit(0)
         except Exception as e:
             console.print(f"[red]Error processing {book.filename}: {e}[/red]")
+            import traceback
+            traceback.print_exc()
             continue
 
     console.print("\n[bold green]✓ Processing complete![/bold green]")
