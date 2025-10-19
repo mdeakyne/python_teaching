@@ -15,7 +15,8 @@ from typing import List, Optional
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
-from azure.ai.agents import AIAgent, create_agent_client
+from azure.ai.agents import AgentsClient
+from azure.core.credentials import AzureKeyCredential
 from pydantic import BaseModel, Field
 
 
@@ -58,22 +59,22 @@ class AzureOpenAISkillExtractor:
             sys.exit(1)
 
         try:
-            self.client = create_agent_client(
-                api_key=self.api_key,
+            self.client = AgentsClient(
                 endpoint=self.endpoint,
-                api_version=self.api_version
+                credential=AzureKeyCredential(self.api_key)
             )
         except Exception as e:
             console.print(f"[red]Error creating agent client: {e}[/red]")
             sys.exit(1)
 
         self.agent = None
+        self.agent_id = None
 
     def create_skill_extraction_agent(self):
         """Create an agent specialized in extracting Python skills"""
         console.print("[cyan]Creating Azure OpenAI agent for skill extraction...[/cyan]")
 
-        system_message = """You are an expert Python educator analyzing technical content to extract discrete, teachable skills.
+        instructions = """You are an expert Python educator analyzing technical content to extract discrete, teachable skills.
 
 Your task is to:
 1. Read technical content about Python
@@ -105,15 +106,17 @@ Return ONLY a valid JSON array of skill objects following this structure:
 Be specific and practical. Focus on skills that can be taught and practiced."""
 
         try:
-            self.agent = AIAgent(
-                client=self.client,
+            self.agent = self.client.create_agent(
                 model=self.deployment,
-                system_message=system_message,
-                name="python-skill-extractor"
+                name="python-skill-extractor",
+                instructions=instructions
             )
-            console.print(f"[green]✓ Agent created with model: {self.deployment}[/green]")
+            self.agent_id = self.agent.id
+            console.print(f"[green]✓ Agent created: {self.agent_id} with model: {self.deployment}[/green]")
         except Exception as e:
             console.print(f"[red]Error creating agent: {e}[/red]")
+            import traceback
+            traceback.print_exc()
             sys.exit(1)
 
         return self.agent
@@ -122,15 +125,35 @@ Be specific and practical. Focus on skills that can be taught and practiced."""
         """Extract skills from markdown content"""
         try:
             prompt = f"Extract Python skills from this content:\n\n{content[:8000]}"  # Limit size
-            response = self.agent.complete(prompt)
 
-            # Extract text from response
-            if hasattr(response, 'content'):
-                response_text = response.content
-            elif isinstance(response, str):
-                response_text = response
-            else:
-                response_text = str(response)
+            # Create a thread and run the agent
+            run = self.client.create_thread_and_run(
+                agent_id=self.agent_id,
+                thread={
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ]
+                }
+            )
+
+            # Get the messages from the thread
+            messages = self.client.messages.list(thread_id=run.thread_id)
+
+            # Extract the assistant's response
+            response_text = None
+            for message in messages.data:
+                if message.role == "assistant":
+                    if message.content and len(message.content) > 0:
+                        text_content = message.content[0]
+                        if hasattr(text_content, 'text'):
+                            response_text = text_content.text.value
+                            break
+
+            if not response_text:
+                return []
 
             # Try to parse JSON from response
             try:

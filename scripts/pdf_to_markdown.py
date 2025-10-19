@@ -16,7 +16,8 @@ from dotenv import load_dotenv
 from pypdf import PdfReader
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
-from azure.ai.agents import AIAgent, create_agent_client
+from azure.ai.agents import AgentsClient
+from azure.core.credentials import AzureKeyCredential
 from pydantic import BaseModel
 
 
@@ -79,22 +80,22 @@ class AzureOpenAIClient:
 
         # Initialize the agent client
         try:
-            self.client = create_agent_client(
-                api_key=self.api_key,
+            self.client = AgentsClient(
                 endpoint=self.endpoint,
-                api_version=self.api_version
+                credential=AzureKeyCredential(self.api_key)
             )
         except Exception as e:
             console.print(f"[red]Error creating agent client: {e}[/red]")
             sys.exit(1)
 
         self.agent = None
+        self.agent_id = None
 
     def create_markdown_agent(self):
         """Create an agent specialized in converting PDF text to markdown"""
         console.print("[cyan]Creating Azure OpenAI agent for markdown conversion...[/cyan]")
 
-        system_message = """You are an expert at converting technical book content to clean, well-structured markdown.
+        instructions = """You are an expert at converting technical book content to clean, well-structured markdown.
 
 Your tasks:
 1. Take raw PDF text and convert it to proper markdown format
@@ -107,15 +108,17 @@ Your tasks:
 Output only the cleaned markdown without any explanations."""
 
         try:
-            self.agent = AIAgent(
-                client=self.client,
+            self.agent = self.client.create_agent(
                 model=self.deployment,
-                system_message=system_message,
-                name="pdf-to-markdown-converter"
+                name="pdf-to-markdown-converter",
+                instructions=instructions
             )
-            console.print(f"[green]✓ Agent created with model: {self.deployment}[/green]")
+            self.agent_id = self.agent.id
+            console.print(f"[green]✓ Agent created: {self.agent_id} with model: {self.deployment}[/green]")
         except Exception as e:
             console.print(f"[red]Error creating agent: {e}[/red]")
+            import traceback
+            traceback.print_exc()
             sys.exit(1)
 
         return self.agent
@@ -123,19 +126,40 @@ Output only the cleaned markdown without any explanations."""
     def process_text_chunk(self, text: str) -> str:
         """Process a text chunk through the agent"""
         try:
+            # Create a thread and run the agent
             prompt = f"Convert this PDF text to clean markdown:\n\n{text}"
-            response = self.agent.complete(prompt)
 
-            # Extract text from response
-            if hasattr(response, 'content'):
-                return response.content
-            elif isinstance(response, str):
-                return response
-            else:
-                return str(response)
+            # Use create_thread_and_run for simpler API
+            run = self.client.create_thread_and_run(
+                agent_id=self.agent_id,
+                thread={
+                    "messages": [
+                        {
+                            "role": "user",
+                            "content": prompt
+                        }
+                    ]
+                }
+            )
+
+            # Get the messages from the thread
+            messages = self.client.messages.list(thread_id=run.thread_id)
+
+            # Extract the assistant's response
+            for message in messages.data:
+                if message.role == "assistant":
+                    # Get the text content from the message
+                    if message.content and len(message.content) > 0:
+                        text_content = message.content[0]
+                        if hasattr(text_content, 'text'):
+                            return text_content.text.value
+
+            return text  # Fallback to original if no response
 
         except Exception as e:
             console.print(f"[yellow]Warning: Error processing chunk: {e}[/yellow]")
+            import traceback
+            traceback.print_exc()
             return text  # Return original text if processing fails
 
 
