@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
 """
+⚠️ DEPRECATED - USE agent_pipeline.py INSTEAD ⚠️
+
+This script uses the old azure.ai.agents.responses API which has been removed.
+
+For the new multi-agent pipeline with:
+- State persistence & checkpointing
+- Multi-agent orchestration
+- Better error handling
+- Resumable workflows
+
+Run: python scripts/agent_pipeline.py
+
+---
+
+LEGACY CODE BELOW - NO LONGER FUNCTIONAL
 PDF to Markdown Converter using Microsoft Agent Framework with Azure OpenAI
 
 Extracts text from PDF books and uses Azure OpenAI agents to convert them
@@ -8,6 +23,7 @@ to well-structured markdown with preserved code blocks and formatting.
 
 import os
 import sys
+import asyncio
 from pathlib import Path
 from typing import Optional
 import json
@@ -16,8 +32,7 @@ from dotenv import load_dotenv
 from pypdf import PdfReader
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn
-from azure.ai.agents import AgentsClient
-from azure.core.credentials import AzureKeyCredential
+from azure.ai.agents.responses import AzureOpenAIResponsesClient
 from pydantic import BaseModel
 
 
@@ -78,20 +93,9 @@ class AzureOpenAIClient:
             console.print("Please copy .env.local.template to .env.local and fill in your credentials")
             sys.exit(1)
 
-        # Initialize the agent client
-        try:
-            self.client = AgentsClient(
-                endpoint=self.endpoint,
-                credential=AzureKeyCredential(self.api_key)
-            )
-        except Exception as e:
-            console.print(f"[red]Error creating agent client: {e}[/red]")
-            sys.exit(1)
-
         self.agent = None
-        self.agent_id = None
 
-    def create_markdown_agent(self):
+    async def create_markdown_agent(self):
         """Create an agent specialized in converting PDF text to markdown"""
         console.print("[cyan]Creating Azure OpenAI agent for markdown conversion...[/cyan]")
 
@@ -108,13 +112,19 @@ Your tasks:
 Output only the cleaned markdown without any explanations."""
 
         try:
-            self.agent = self.client.create_agent(
-                model=self.deployment,
+            # Set environment variables for the client
+            os.environ["AZURE_OPENAI_ENDPOINT"] = self.endpoint
+            os.environ["AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME"] = self.deployment
+            os.environ["AZURE_OPENAI_API_VERSION"] = self.api_version
+            os.environ["AZURE_OPENAI_API_KEY"] = self.api_key
+
+            self.agent = AzureOpenAIResponsesClient(
+                api_key=self.api_key
+            ).create_agent(
                 name="pdf-to-markdown-converter",
                 instructions=instructions
             )
-            self.agent_id = self.agent.id
-            console.print(f"[green]✓ Agent created: {self.agent_id} with model: {self.deployment}[/green]")
+            console.print(f"[green]✓ Agent created with model: {self.deployment}[/green]")
         except Exception as e:
             console.print(f"[red]Error creating agent: {e}[/red]")
             import traceback
@@ -123,39 +133,12 @@ Output only the cleaned markdown without any explanations."""
 
         return self.agent
 
-    def process_text_chunk(self, text: str) -> str:
+    async def process_text_chunk(self, text: str) -> str:
         """Process a text chunk through the agent"""
         try:
-            # Create a thread and run the agent
             prompt = f"Convert this PDF text to clean markdown:\n\n{text}"
-
-            # Use create_thread_and_run for simpler API
-            run = self.client.create_thread_and_run(
-                agent_id=self.agent_id,
-                thread={
-                    "messages": [
-                        {
-                            "role": "user",
-                            "content": prompt
-                        }
-                    ]
-                }
-            )
-
-            # Get the messages from the thread
-            messages = self.client.messages.list(thread_id=run.thread_id)
-
-            # Extract the assistant's response
-            for message in messages.data:
-                if message.role == "assistant":
-                    # Get the text content from the message
-                    if message.content and len(message.content) > 0:
-                        text_content = message.content[0]
-                        if hasattr(text_content, 'text'):
-                            return text_content.text.value
-
-            return text  # Fallback to original if no response
-
+            response = await self.agent.run(prompt)
+            return str(response)
         except Exception as e:
             console.print(f"[yellow]Warning: Error processing chunk: {e}[/yellow]")
             import traceback
@@ -208,7 +191,7 @@ def chunk_pages(pages: list[str], chunk_size: int = 2000) -> list[str]:
     return chunks
 
 
-def process_book(book: BookConfig, azure_client: AzureOpenAIClient, references_dir: Path):
+async def process_book(book: BookConfig, azure_client: AzureOpenAIClient, references_dir: Path):
     """Process a single book: extract PDF, convert to markdown"""
     console.print(f"\n[bold blue]Processing: {book.filename}[/bold blue]")
     console.print(f"Description: {book.description}")
@@ -245,7 +228,7 @@ def process_book(book: BookConfig, azure_client: AzureOpenAIClient, references_d
 
         for i, chunk in enumerate(chunks, 1):
             try:
-                markdown = azure_client.process_text_chunk(chunk)
+                markdown = await azure_client.process_text_chunk(chunk)
                 markdown_chunks.append(f"<!-- Chunk {i} -->\n\n{markdown}")
                 progress.update(task, advance=1)
             except Exception as e:
@@ -276,7 +259,7 @@ def process_book(book: BookConfig, azure_client: AzureOpenAIClient, references_d
     console.print(f"[green]✓ Metadata saved to {metadata_file}[/green]")
 
 
-def main():
+async def main():
     """Main entry point"""
     console.print("[bold magenta]PDF to Markdown Converter[/bold magenta]")
     console.print("Using Microsoft Agent Framework with Azure OpenAI\n")
@@ -292,7 +275,7 @@ def main():
     # Initialize Azure OpenAI client
     try:
         azure_client = AzureOpenAIClient()
-        azure_client.create_markdown_agent()
+        await azure_client.create_markdown_agent()
     except Exception as e:
         console.print(f"[red]Error initializing Azure OpenAI: {e}[/red]")
         console.print("[yellow]Make sure you've set up .env.local with your Azure credentials[/yellow]")
@@ -320,7 +303,7 @@ def main():
     # Process each book
     for book in books_to_process:
         try:
-            process_book(book, azure_client, references_dir)
+            await process_book(book, azure_client, references_dir)
         except KeyboardInterrupt:
             console.print("\n[yellow]Interrupted by user[/yellow]")
             sys.exit(0)
@@ -335,4 +318,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

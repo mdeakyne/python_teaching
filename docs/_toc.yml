@@ -16,6 +16,13 @@ chapters:
     sections:
       - file: data-science/lessons/index
         title: Lessons
+        sections:
+          - file: data-science/lessons/lesson-01-python-for-data-science-setup
+            title: "Lesson 01: Setup"
+          - file: data-science/lessons/lesson-02-introduction-to-pandas-dataframes
+            title: "Lesson 02: DataFrames"
+          - file: data-science/lessons/lesson-03-data-selection-filtering
+            title: "Lesson 03: Selection & Filtering"
       - file: data-science/exercises/index
         title: Exercises
       - file: data-science/projects/index

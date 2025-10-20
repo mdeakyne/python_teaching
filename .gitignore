@@ -13,6 +13,7 @@ wheels/
 solutions/
 references*
 skills*
+scripts*
 
 # Environment variables and secrets
 .env.local
