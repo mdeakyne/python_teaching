@@ -1,4 +1,3 @@
-```markdown
 # DAY 14: Mini-Project – Complete EDA Dashboard (Static)
 
 ## Introduction
@@ -147,4 +146,3 @@ By the end of today, you should be able to:
 - ✅ Summarize and report meaningful business insights from visual data
 
 ---
-```

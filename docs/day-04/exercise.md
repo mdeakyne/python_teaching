@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Find Missing Values in Reviews (Easy – ~5 min)
 
 **Goal:** Identify missing ratings and review dates in `reviews.csv`.
@@ -106,5 +105,4 @@ print(merged_df[["book_id", "title", "rating", "review_date", "verified_purchase
 book_id   title                rating   review_date  verified_purchase
 101       The Silent Library   4.0      2001-05-12   Yes
 ...
-```
 ```

@@ -1,4 +1,3 @@
-```markdown
 DAY 21/21: Capstone – Full-Featured Book Analytics Dashboard 📊  
 
 Today I built a **full-stack, end-to-end analytics dashboard** that pulls together data processing, visualization, and deployment into one cohesive tool — the final project of my bootcamp journey.  
@@ -22,4 +21,3 @@ After three weeks of immersive work, I’ve gone from individual Python scripts 
 💬 **Question:** If you had a dashboard that could instantly answer one critical business question, what would it be?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day21of21
-```

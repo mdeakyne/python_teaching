@@ -1,4 +1,3 @@
-```markdown
 ## 📊 Day 11 – Advanced Plotly: Multiple Traces & Subplots – Hands-on Exercises  
 
 ---
@@ -166,4 +165,3 @@ fig.show()
 
 **Expected Output:**  
 A vertically stacked, interactive figure where each row represents a genre, showing two aligned lines: one for monthly sales quantity and one for average rating, with separate y-axes. The layout is optimized for dashboard presentation and easy comparison.
-```

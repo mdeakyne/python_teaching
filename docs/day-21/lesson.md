@@ -1,4 +1,3 @@
-```markdown
 # Day 21 – Capstone: Full-Featured Book Analytics Dashboard
 
 ## Introduction
@@ -150,4 +149,3 @@ def update_summary(n_clicks):
 ✅ I can deploy a Dash app with caching and optimized performance for real-world use.
 
 ---
-```

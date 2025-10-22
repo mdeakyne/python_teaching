@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 (Easy – 5 min): Load and Peek at Books Data
 
 **Goal:** Load the `books.csv` dataset and inspect the first few rows.
@@ -85,4 +84,3 @@ merged_df = # your merge code here
 **Expected Output:**
 - 10 rows showing recent transactions with columns: `sale_id`, `date`, `book_id`, `title`, `quantity`, `unit_price`, `total_amount`, etc.
 - Sorted so the most recent sale dates appear first.
-```

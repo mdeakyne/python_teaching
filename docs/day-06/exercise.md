@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – EASY (5 min): Merge Authors and Books
 
 **Goal:** Merge `authors.csv` and `books.csv` so each book record includes the author's country.
@@ -110,4 +109,3 @@ print(final_report.head())
 
 **Expected Output:**
 A DataFrame containing complete sale information joined with book title, author country, and an `avg_rating` column summarizing the average rating for the books sold in that transaction. Transactions without reviews display `NaN` in `avg_rating`.
-```

@@ -1,4 +1,3 @@
-```markdown
 # Day 1 – Environment Setup & Generating Synthetic Book Data  
 **Week 1 | Beginner | Duration: 3-5 minutes**
 
@@ -135,4 +134,3 @@ By the end of today, you should be able to:
 - [ ] Generate a small synthetic dataset and export it as a `.csv` file
 
 Tomorrow, we’ll dive into **exploring patterns** in our bookstores’ sales data—turning these tables into actionable insights.
-```

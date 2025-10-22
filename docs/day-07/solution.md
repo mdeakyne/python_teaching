@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Parsing and Setting Datetime Index
 
 ### 1. Complete Working Code
@@ -155,4 +154,3 @@ Combining metadata with sales and using rolling averages provides clearer insigh
 3. Merging on wrong key (`sale_id` instead of `book_id`) → incorrect joins.
 
 ---
-```

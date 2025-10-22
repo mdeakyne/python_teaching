@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 9 Hands-On Exercises: Seaborn Statistical Plots - Distribution Analysis
 
 ### Task 1 (EASY - 5 min)  
@@ -101,4 +100,3 @@ plt.show()
 
 **Expected Output:**  
 A violin plot showing the distribution shape of book prices for each genre, with numerical average rating annotations above each genre; genres with both high average ratings and price clusters become clearly visible.
-```

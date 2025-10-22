@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – EASY (5 min): Add Loading State to a Single Callback
 
 **Objective:** Reinforce adding a loading spinner to improve user experience during data processing.
@@ -166,4 +165,3 @@ def update_review_summary(author_id):
 - Page 1 shows filtered sales as before.
 - Page 2 shows average rating and total reviews for selected author, with a dot-style loader.
 - Fast page load after initial data retrieval due to caching.
-```

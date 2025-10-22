@@ -1,4 +1,3 @@
-```markdown
 # Day 4: Data Cleaning – Handling Missing Reviews
 
 ## Introduction
@@ -126,4 +125,3 @@ By the end of this lesson, you should be able to:
 
 ---
 **Tip:** Just like a neatly arranged bookstore helps customers find what they want faster, clean datasets help us find insights without confusion.
-```

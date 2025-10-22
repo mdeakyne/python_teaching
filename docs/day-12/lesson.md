@@ -1,4 +1,3 @@
-```markdown
 # Day 12: Data Storytelling – Choosing the Right Chart
 **Week:** 2  
 **Difficulty:** Intermediate  
@@ -148,4 +147,3 @@ fig.show()
 ✅ I can combine multiple charts into a cohesive visual story.
 
 ---
-```

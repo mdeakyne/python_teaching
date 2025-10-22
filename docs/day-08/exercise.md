@@ -1,4 +1,3 @@
-```markdown
 ## 📊 Day 8 Hands-on Exercises – Matplotlib Basics: First Charts  
 
 ---
@@ -125,4 +124,3 @@ plt.show()
 A **combined chart** where grey bars represent total monthly revenue for all genres, overlaid with a blue line showing the monthly trend for the top-performing genre. This allows visual comparison of the genre’s sales performance within the broader trend.  
 
 ---
-```

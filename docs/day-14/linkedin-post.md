@@ -1,4 +1,3 @@
-```markdown
 **DAY 14/21 – Mini-Project: Complete EDA Dashboard (Static)**  
 
 Today I built a **static multi-chart EDA dashboard** — a full workflow from raw dataset to actionable insights. This exercise was a big step toward thinking like an analyst rather than just a coder.  
@@ -24,4 +23,3 @@ plt.show()
 💬 **Question:** If you could track *only one KPI* for your business in a dashboard, what would it be, and why?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day14of21 #Analytics #BusinessIntelligence
-```

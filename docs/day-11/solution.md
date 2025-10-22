@@ -1,4 +1,3 @@
-```markdown
 ## 📊 Day 11 – Advanced Plotly: Multiple Traces & Subplots – Solutions
 
 ---
@@ -288,4 +287,3 @@ Secondary y-axes let you overlay metrics of different units/scales in the same c
 3. Using default y-axis range for ratings, which may misrepresent values if not locked to 0–5.
 
 ---
-```

@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 (Easy – 5 min): Load and Peek at Books Data
 
 ### Complete Working Code
@@ -148,4 +147,3 @@ Merging DataFrames on a common key allows you to enrich datasets, and sorting gi
 1. Forgetting to convert string dates to `datetime` before sorting.
 2. Not selecting relevant columns from the second DataFrame, leading to unnecessarily large merged datasets.
 3. Using the wrong join type and unexpectedly dropping rows in the merge.
-```

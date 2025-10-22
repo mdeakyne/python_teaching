@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 12 Solutions — Data Storytelling: Choosing the Right Chart
 
 ---
@@ -205,4 +204,3 @@ Combining multiple charts in a dashboard enables both correlation analysis and t
 3. In Dash, forgetting to serve the app via `app.run_server()` when testing locally.
 
 ---
-```

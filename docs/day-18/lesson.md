@@ -1,4 +1,3 @@
-```markdown
 # Day 18 – Advanced Layouts: Multi-page Dashboard
 
 ## Introduction
@@ -163,4 +162,3 @@ You can now:
 - [ ] Implement navigation that keeps common components persistent across tabs
 
 ---
-```

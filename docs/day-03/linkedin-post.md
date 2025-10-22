@@ -1,4 +1,3 @@
-```markdown
 **DAY 3/21 – Data Selection & Filtering: Finding the Right Books 📚**
 
 Today I discovered how to *zoom in* on the data that truly matters — by selecting specific columns, slicing rows, and applying smart filters with Pandas. It’s like going from scanning an entire bookshop to focusing on the one shelf that holds exactly what you’re looking for.  
@@ -24,4 +23,3 @@ affordable_hits = books.query('rating > 4.5 and price < 20')
 ❓ *What’s your go-to way to filter datasets when speed matters most?*  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day3of21
-```

@@ -1,4 +1,3 @@
-```markdown
 ## ✅ Day 17 Solutions – Callbacks: Making It Interactive
 
 ---
@@ -269,4 +268,3 @@ Dash supports multiple outputs in a single callback, allowing you to coordinate 
 3. Returning figures in wrong order — must match Output list order.
 
 ---
-```

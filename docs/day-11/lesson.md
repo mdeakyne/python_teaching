@@ -1,4 +1,3 @@
-```markdown
 # Day 11: Advanced Plotly – Multiple Traces & Subplots  
 **Week**: 2  
 **Difficulty**: Intermediate  
@@ -178,4 +177,3 @@ By the end of today, you should be able to:
 - [ ] Create a chart with **multiple traces** showing trends for different genres.  
 - [ ] Build **subplot grids** combining different chart types and metrics.  
 - [ ] Customize layouts and themes for clarity and brand consistency.  
-```

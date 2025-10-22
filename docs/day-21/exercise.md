@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – EASY (5 min): Load and Preview Books Data
 
 **Goal:** Reinforce loading CSV data and basic Pandas inspection.
@@ -122,4 +121,3 @@ reviews_df = pd.read_csv("reviews.csv")
   - `num_reviews`
 - Sorted by `avg_rating` descending, highest at top.
 - Ratings displayed with 2 decimal places, e.g., `4.57`.
-```

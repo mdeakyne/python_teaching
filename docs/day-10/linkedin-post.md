@@ -1,4 +1,3 @@
-```markdown
 Day 10/21: Plotly Express – Interactive Basics 📊  
 
 Today I explored **Plotly Express** and learned how easy it is to create interactive charts directly from a pandas DataFrame. The magic lies in how quickly you can transform raw data into visuals where hovering, zooming, and filtering give deeper insights without writing complex code.  
@@ -20,4 +19,3 @@ fig.show()
 ❓ **Question for you:** If you could make one dataset in your work fully interactive, which would it be—and how would it change your analysis?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day10of21
-```

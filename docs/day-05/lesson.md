@@ -1,4 +1,3 @@
-```markdown
 # Day 5: Aggregation & GroupBy – Sales by Genre  
 **Week 1 | Difficulty: Intermediate | Duration: 3-5 min**
 
@@ -137,4 +136,3 @@ print(pivot_sales)
 ✅ I can create pivot tables to compare data across two categorical dimensions.
 
 ---
-```

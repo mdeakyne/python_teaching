@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Exercise: Dash Core Components – Inputs & Controls
 
 ---
@@ -160,4 +159,3 @@ def update_sales(selected_genre, year_range, max_selected_price):
 **Expected Output:**
 - Interactive controls for genre, year range, and price.
 - Changing controls updates displayed total sales value, e.g., _"Total sales: $42,350 for Mystery books (2000–2010) under $20"_.
-```

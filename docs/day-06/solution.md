@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – EASY: Merge Authors and Books
 
 ### 1. Complete Working Code
@@ -196,4 +195,3 @@ Stepwise merges and group-by operations allow you to integrate diverse datasets 
 1. Averaging ratings without handling NaN values, which can skew results.
 2. Forgetting to merge `country` into the sales dataset before final output.
 3. Confusing inner vs. left join semantics, leading to loss of data in ratings analysis.
-```

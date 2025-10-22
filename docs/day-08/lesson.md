@@ -1,4 +1,3 @@
-```markdown
 # Day 8: Matplotlib Basics – First Charts  
 **Week:** 2  
 **Difficulty:** Beginner  
@@ -145,4 +144,3 @@ By the end of today’s lesson, you should be able to:
 - [ ] Customize colors, labels, and titles to clearly communicate insights.
 
 ---
-```

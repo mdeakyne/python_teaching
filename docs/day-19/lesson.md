@@ -1,4 +1,3 @@
-```markdown
 # Day 19: Integrating Pandas with Dash – Live Filtering
 
 ## Introduction
@@ -137,4 +136,3 @@ def update_charts(selected_day):
 ✅ I can update multiple charts from one filtered DataFrame without reloading data.
 
 ---
-```

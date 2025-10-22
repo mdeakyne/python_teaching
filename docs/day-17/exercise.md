@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Hands-On Exercises – Day 17: Callbacks – Making It Interactive
 
 ---
@@ -161,4 +160,3 @@ def update_dashboard(selected_genre, selected_year):
 For genre "Fantasy" in year 2022: the daily sales chart shows spikes on key dates; the top 5 books table lists Fantasy books published in 2022 with highest average ratings.
 
 ---
-```

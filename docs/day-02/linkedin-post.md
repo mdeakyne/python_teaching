@@ -1,4 +1,3 @@
-```markdown
 **DAY 2/21: DataFrame Basics – Creating & Inspecting Data**
 
 Today I discovered the essential skill of reading CSV files into Pandas DataFrames and exploring them to quickly understand the shape and structure of the data.  
@@ -23,4 +22,3 @@ print(df.describe())
 💬 **Question for you:** When you start a new dataset, what’s the very first thing you check to understand its structure?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day2of21
-```

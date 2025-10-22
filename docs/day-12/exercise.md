@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 12 Hands-On Exercises — Data Storytelling: Choosing the Right Chart
 
 ---
@@ -135,4 +134,3 @@ A Dash dashboard with:
 - Right: Line chart showing distinct trends in monthly sales for High vs. Low Rated books.
 
 ---
-```

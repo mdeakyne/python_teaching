@@ -1,4 +1,3 @@
-```markdown
 **DAY 6/21: Merging Datasets – Authors, Books, Sales 📚**
 
 Today I discovered how powerful dataset merges can be for unlocking business insights. By combining different sources of information — authors, books, and sales data — I learned how to create a single, cohesive view of the bookstore’s performance.
@@ -20,4 +19,3 @@ summary = full_data.groupby("author_name")["sales_amount"].sum()
 ❓ **Question for you:** When combining datasets in your projects, do you prefer starting with an inner join for precision or a left join for completeness?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day6of21
-```

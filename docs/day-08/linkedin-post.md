@@ -1,4 +1,3 @@
-```markdown
 **DAY 8/21: Matplotlib Basics – First Charts 🎨📊**  
 
 Today I discovered the magic of `matplotlib.pyplot` — the gateway to transforming raw data into clear, insightful visuals. From drawing my first **line chart** to experimenting with **bar charts** and simple customization, it feels like unlocking a new superpower in data storytelling.  
@@ -27,4 +26,3 @@ plt.show()
 💬 **Question for You:** What’s your favorite way to tell a data story — a clean line chart, a bold bar chart, or something more complex?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day8of21
-```

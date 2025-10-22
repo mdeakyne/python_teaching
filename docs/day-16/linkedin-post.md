@@ -1,4 +1,3 @@
-```markdown
 **DAY 16/21: Dash Core Components – Inputs & Controls** 🚀  
 
 Today I explored **dcc components** in Dash — the building blocks that give users control over their data exploration experience. From dropdowns to sliders to date pickers, these tools transform a static dashboard into an interactive analytics hub.  
@@ -25,4 +24,3 @@ dcc.DatePickerRange(start_date='2024-01-01', end_date='2024-06-01')
 💬 **Question:** If you could add one interactive control to your favorite dashboard, what would it be and why?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day16of21
-```

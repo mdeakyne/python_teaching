@@ -1,4 +1,3 @@
-```markdown
 # Day 7: Time Series Basics – Daily Book Sales Trends
 
 ## Introduction
@@ -115,4 +114,3 @@ By now, you should be able to:
 - ✅ Apply rolling averages to detect underlying trends in noisy sales data  
 
 > **Next up:** We’ll use these trend tools to compare genres and identify seasonal bestsellers—critical for marketing and inventory planning.
-```

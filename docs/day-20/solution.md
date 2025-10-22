@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – EASY: Add Loading State to a Single Callback
 
 ### 1. Complete Working Code
@@ -314,4 +313,3 @@ Combining multi-page routing, caching, and loading states yields responsive, use
 1. Forgetting `suppress_callback_exceptions=True` in multi-page apps.
 2. Not memoizing expensive data filters before page switching.
 3. Leaving out navigation links, making switching pages difficult.
-```

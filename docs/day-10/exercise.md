@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Interactive Scatter Plot (EASY, ~5 min)
 
 **Goal:** Create an interactive scatter plot showing **book price vs total sales quantity** using `plotly.express`.  
@@ -133,4 +132,3 @@ fig.show()
 
 **Expected Output:**  
 An interactive time series chart showing revenue trends over months for all genres, with the ability to filter to a single genre using a dropdown menu.
-```

@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Find Missing Values in Reviews
 
 ### 1. Complete Working Code
@@ -135,4 +134,3 @@ Cleaning and merging datasets ensures we have complete, consistent information e
 3. Not selecting only needed columns from `books_df` before merge, which might clutter data.
 
 ---
-```

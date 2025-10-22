@@ -1,4 +1,3 @@
-```markdown
 ## 📊 Day 8 – Matplotlib Basics: First Charts – Complete Solutions
 
 ---
@@ -159,4 +158,3 @@ Layering multiple plot types in one chart enables richer context comparisons in 
 1. Not aligning month labels between bar and line plots.
 2. Forgetting to convert dates to datetime before grouping.
 3. Overlapping labels due to missing `tight_layout()` or rotation handling.
-```

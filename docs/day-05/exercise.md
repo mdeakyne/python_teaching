@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 5: Aggregation & GroupBy – Hands-On Exercises
 
 ---
@@ -131,4 +130,3 @@ _Example:_
 | Romance   | 18.75   | 0.00    | 20.50   |
 
 ---
-```

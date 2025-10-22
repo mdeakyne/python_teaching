@@ -1,4 +1,3 @@
-```markdown
 Today I built my very first **Dash app** – turning static visualizations into an interactive dashboard felt like opening a new chapter in my data storytelling journey. 🚀  
 
 🎯 **Key Takeaway:** Dash makes it surprisingly simple to bridge the gap between Python scripts and interactive web dashboards without needing deep front-end knowledge.  
@@ -24,4 +23,3 @@ app.run_server(debug=True)
 How do you usually decide when to switch from static charts to interactive dashboards in your projects?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day15of21
-```

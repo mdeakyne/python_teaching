@@ -1,4 +1,3 @@
-```markdown
 **DAY 9/21: Seaborn Statistical Plots – Distribution Analysis 📊**
 
 Today I explored **Seaborn’s statistical plots** to better understand data distributions — a key skill for turning raw numbers into actionable insights.  
@@ -25,4 +24,3 @@ As a data storyteller, these visual tools are game-changers for communicating fi
 💬 **Question:** What’s your go-to visualization for spotting patterns quickly in a new dataset?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day9of21
-```

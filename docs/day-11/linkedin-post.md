@@ -1,4 +1,3 @@
-```markdown
 **DAY 11/21: Advanced Plotly – Multiple Traces & Subplots**  
 
 Today I discovered how to harness **Plotly graph objects** to create powerful visualizations with **multiple traces** and **subplots**—unlocking the ability to tell richer, more nuanced data stories.  
@@ -26,4 +25,3 @@ fig.show()
 💬 **Question for you:** How do you decide when to use subplots versus layering multiple traces in one chart for your audience?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day11of21
-```

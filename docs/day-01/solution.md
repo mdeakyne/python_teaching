@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 1 – Solutions for Environment Setup & Generating Synthetic Book Data
 
 ---
@@ -229,4 +228,3 @@ Merging datasets on common keys allows combining related information into a unif
 3. Not handling NaN values when some entries have no matching sales.
 
 ---
-```

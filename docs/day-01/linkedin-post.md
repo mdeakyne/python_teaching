@@ -1,4 +1,3 @@
-```markdown
 **DAY 1/21: Environment Setup & Generating Synthetic Book Data 📚**  
 
 Today I set up my development environment and took my first step into data generation — starting with synthetic book data for the fictional *Page Turner Analytics*. This was the foundation for everything that follows in the bootcamp.  
@@ -28,4 +27,3 @@ df.to_csv("books.csv", index=False)
 💬 **Question for you:** How do you approach generating synthetic data for your projects — randomization, pattern-based, or realistic samples?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day1of21
-```

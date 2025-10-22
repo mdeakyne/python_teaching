@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 5: Aggregation & GroupBy – Solutions
 
 ---
@@ -159,4 +158,3 @@ Pivot tables in pandas are powerful for multi-dimensional aggregation and compar
 1. Using `aggfunc='sum'` when average is required.
 2. Not handling missing values, which leaves NaNs that complicate interpretation.
 3. Forgetting to drop helper columns after sorting, resulting in cluttered output.
-```

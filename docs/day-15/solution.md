@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Easy: Your First Dash App Layout
 
 ### 1. Complete Working Code
@@ -223,4 +222,3 @@ Organizing related metrics and visuals in structured multi-section layouts impro
 3. Large images not resized properly—can break layout responsiveness.
 
 ---
-```

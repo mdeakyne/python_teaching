@@ -1,4 +1,3 @@
-```markdown
 # Day 16: Dash Core Components – Inputs & Controls
 
 ## Introduction
@@ -127,4 +126,3 @@ These components will later tie into **callbacks** so that updating a control in
 ✅ I can implement a **slider** to filter books by price range.
 
 Next session, we’ll connect these inputs to callbacks so the dashboard reacts in real-time to user selections.
-```

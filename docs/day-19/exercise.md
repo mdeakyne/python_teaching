@@ -1,4 +1,3 @@
-```markdown
 ## 🛠 Exercises – Day 19: Integrating Pandas with Dash – Live Filtering
 
 ### Task 1 – Filter Sales by Selected Day of the Week (Easy – ~5 min)
@@ -161,4 +160,3 @@ app.layout = html.Div([
   - Records count.
   - Total revenue.
   - Bar chart showing top 5 genres for the chosen day.
-```

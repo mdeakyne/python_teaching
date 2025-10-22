@@ -1,4 +1,3 @@
-```markdown
 ## DAY 14 – Hands-On Exercises: Mini-Project – Complete EDA Dashboard (Static)
 
 ### Task 1 (EASY – 5 min)
@@ -140,4 +139,3 @@ A single dashboard with:
 - Middle panel: top 5 authors ranked by revenue.
 - Right panel: ratings histogram showing distribution peaks.
 All panels clearly labeled and aligned, ready for static reporting.
-```

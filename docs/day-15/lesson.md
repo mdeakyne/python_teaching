@@ -1,4 +1,3 @@
-```markdown
 # Day 15: Dash Fundamentals – First App  
 **Week 3 | Difficulty: Beginner | Duration: 3–5 minutes**
 
@@ -140,4 +139,3 @@ By the end of this lesson, you should be able to:
 - [ ] Embed a static chart into a Dash app using `dcc.Graph`.
 
 ---
-```

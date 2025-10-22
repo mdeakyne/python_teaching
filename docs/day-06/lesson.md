@@ -1,4 +1,3 @@
-```markdown
 # Day 6: Merging Datasets – Authors, Books, Sales
 
 ## Introduction
@@ -102,4 +101,3 @@ By the end of this lesson, you should be able to:
 - [ ] Integrate multiple datasets to create richer analytical views.
 
 ---
-```

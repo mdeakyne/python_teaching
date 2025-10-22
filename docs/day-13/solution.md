@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 13 Solutions: Styling & Theming Visualizations
 
 ---
@@ -217,4 +216,3 @@ Consistent theming across dashboards improves brand recognition and user experie
 3. Not converting dates, which breaks monthly grouping.
 
 ---
-```

@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Easy: Your First Dash App Layout  
 **Goal:** Build a basic Dash app that displays a static heading and one image of a chart (use any existing PNG chart from your earlier Matplotlib work).  
 
@@ -133,4 +132,3 @@ if __name__ == "__main__":
 
 **Expected Output:**  
 Responsive web layout: top section contains two summaries (Sales, Reviews) side-by-side; bottom section contains two static charts side-by-side. Metrics update based on actual CSV contents.  
-```

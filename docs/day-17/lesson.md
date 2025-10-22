@@ -1,4 +1,3 @@
-```markdown
 # Day 17: Callbacks – Making It Interactive
 **Week:** 3  
 **Difficulty:** Intermediate  
@@ -194,4 +193,3 @@ By the end of this section, you should be able to:
 - [ ] Build a callback that updates a chart in response to a dropdown selection.  
 - [ ] Connect two inputs to two different outputs in one callback.  
 - [ ] Use State to read values without triggering updates until a button click.
-```

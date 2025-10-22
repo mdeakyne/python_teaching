@@ -1,4 +1,3 @@
-```markdown
 # Day 13: Styling & Theming Visualizations  
 **Week:** 2  
 **Difficulty:** Intermediate  
@@ -156,4 +155,3 @@ fig2.show()
 
 ---
 **Tip:** A well-styled chart is like a well-designed book cover—inviting, engaging, and true to its story.
-```

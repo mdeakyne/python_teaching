@@ -1,4 +1,3 @@
-```markdown
 Today I explored **chart selection** as part of my data storytelling journey — learning how the right visual can make insights crystal clear. Picking the wrong chart can hide trends or confuse the audience, while the right one turns numbers into a narrative anyone can understand.  
 
 🎯 **Key Takeaway:** Every dataset has a “best-fit” visual — choose with purpose, not habit.  
@@ -22,4 +21,3 @@ plt.show()
 How do *you* decide which chart type to use when telling a data story? Share your go-to approach!  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day12of21
-```

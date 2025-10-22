@@ -1,4 +1,3 @@
-```markdown
 # Day 2: DataFrame Basics – Creating & Inspecting Data
 
 ## Introduction
@@ -133,4 +132,3 @@ By now, you should be able to:
 - **Rename columns** to more convenient names for analysis.
 
 ---
-```

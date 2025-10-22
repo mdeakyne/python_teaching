@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Solutions: Dash Core Components – Inputs & Controls
 
 ---
@@ -265,4 +264,3 @@ Combining multiple filters and joining datasets within a callback enables rich, 
 1. Forgetting to filter the joined dataset by all control values.  
 2. Performing joins on mismatched key column names without renaming.  
 3. Treating price as string rather than numeric type, breaking comparisons.
-```

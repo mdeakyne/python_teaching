@@ -1,4 +1,3 @@
-```markdown
 ## Day 18: Advanced Layouts – Multi-page Dashboard  
 
 ---
@@ -266,4 +265,3 @@ URL-based navigation allows a Dash app to scale to multiple pages with unique co
 - Forgetting to include `dcc.Location` to capture URL changes.  
 - Mismatched paths in `dcc.Link` and routing callback causing blank output.  
 - Not defining a default layout for unexpected paths.
-```

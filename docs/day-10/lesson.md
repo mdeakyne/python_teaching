@@ -1,4 +1,3 @@
-```markdown
 # Day 10: Plotly Express – Interactive Basics  
 **Week:** 2  
 **Difficulty:** Intermediate  
@@ -149,4 +148,3 @@ By the end of this lesson, you should be able to:
 - [ ] Generate interactive time series plots to explore seasonal trends.
 
 ---
-```

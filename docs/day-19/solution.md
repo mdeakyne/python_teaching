@@ -1,4 +1,3 @@
-```markdown
 ## 🛠 Day 19: Integrating Pandas with Dash – Live Filtering
 
 ---
@@ -234,4 +233,3 @@ Dash callbacks can return multiple UI components, enabling synchronized data upd
 3. Passing empty DataFrames to Plotly without handling, causing blank charts.
 
 ---
-```

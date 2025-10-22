@@ -1,4 +1,3 @@
-```markdown
 **DAY 13/21: Styling & Theming Visualizations 🎨📊**
 
 Today I explored how **color palettes, themes, and style sheets** can transform visualizations from functional charts into branded, memorable stories.  
@@ -24,4 +23,3 @@ plt.show()
 💬 **Question:** How do you balance aesthetics with readability in data visualizations? Do you prioritize brand colors or optimal data clarity?
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day13of21
-```

@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 9 Solutions: Seaborn Statistical Plots - Distribution Analysis
 
 ---
@@ -152,4 +151,3 @@ Violin plots convey both distribution spread and density, and annotations can en
 3. Incorrect annotation index mapping can misplace text over the wrong genre.
 
 ---
-```

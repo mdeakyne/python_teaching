@@ -1,4 +1,3 @@
-```markdown
 **DAY 18/21 – Advanced Layouts: Multi-page Dashboard 🚀**
 
 Today I built **multi-page apps** with tabbed navigation, grid layouts, and responsive design — turning a single crowded dashboard into a smooth, navigable experience.  
@@ -25,4 +24,3 @@ app.layout = html.Div([
 💬 **Question for you:** If you could redesign a dashboard you use daily, what’s the *first* change you’d make for a smoother workflow?
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day18of21
-```

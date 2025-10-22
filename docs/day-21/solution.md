@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – EASY: Load and Preview Books Data
 
 ### 1. Complete Working Code
@@ -167,4 +166,3 @@ By joining and aggregating multiple datasets, you can create comprehensive perfo
 1. Forgetting to round ratings for consistent display in dashboards.
 2. Using inner joins might drop authors without reviews; outer joins preserve all.
 3. Not handling missing data (NaN) that can appear after merges, especially for authors with sales but no reviews or vice versa.
-```

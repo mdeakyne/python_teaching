@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 3 – Data Selection & Filtering Solutions
 
 ---
@@ -148,4 +147,3 @@ Merging multiple datasets allows you to combine attributes (like ratings) for co
 3. Using wrong comparison operators (`>` instead of `>=`) for rating filtering.
 
 ---
-```

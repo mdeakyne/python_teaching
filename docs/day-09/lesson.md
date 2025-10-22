@@ -1,4 +1,3 @@
-```markdown
 # Day 9: Seaborn Statistical Plots - Distribution Analysis  
 **Week:** 2  
 **Difficulty:** Beginner  
@@ -117,4 +116,3 @@ By the end of this lesson, you should be able to:
 ✅ Build violin plots to analyze the shape and spread of ratings for multiple genres.
 
 ---
-```

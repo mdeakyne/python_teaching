@@ -1,4 +1,3 @@
-```markdown
 **Day 17/21: Callbacks – Making It Interactive 🚀**
 
 Today I discovered how *callbacks* can transform a static dashboard into a dynamic, interactive experience. Instead of a single, unchanging view, the dashboard now responds instantly to user input — making data exploration not only faster, but more engaging.
@@ -25,4 +24,3 @@ def update_chart(selected_genre):
 💬 How do you usually make your dashboards or reports interactive? Share your favorite approach — I’d love to hear and compare notes!
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day17of21
-```

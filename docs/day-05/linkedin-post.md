@@ -1,4 +1,3 @@
-```markdown
 **DAY 5/21 – Aggregation & GroupBy: Sales by Genre 📊**
 
 Today I explored how **`groupby`** and **aggregation functions** can turn raw sales data into actionable insights.  
@@ -22,4 +21,3 @@ print(sales_by_genre.head())
 ❓ **Question for you:** When you analyze your data, do you start with broad trends first—or dive straight into granular detail?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day5of21 #LearningJourney #Upskilling
-```

@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 1 – Hands‑On Exercises  
 **Topic:** Environment Setup & Generating Synthetic Book Data  
 
@@ -141,4 +140,3 @@ print(merged_df)
 - `reviews_df` shows synthetic reviews tied to books from the earlier DataFrames.  
 - `merged_df` contains columns from books, authors, and sales, with correct matches on `book_id`.  
 - You can visually verify relationships between datasets (e.g., matching genres to sales quantities).  
-```

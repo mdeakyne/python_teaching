@@ -1,4 +1,3 @@
-```markdown
 **DAY 4/21: Data Cleaning – Handling Missing Reviews**  
 
 Today I learned how to wrangle messy datasets by mastering **NaN handling** in Pandas. Missing values can hide important insights or worse—distort them—so getting this right is key.  
@@ -20,4 +19,3 @@ reviews['verified'] = reviews['verified'].str.strip().fillna('Unknown')
 💬 *Have you ever salvaged messy data that you thought was unusable? How did you approach it?*  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day4of21
-```

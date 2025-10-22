@@ -1,4 +1,3 @@
-```markdown
 **DAY 19/21: Integrating Pandas with Dash – Live Filtering**  
 
 Today I discovered how powerful pandas can be when integrated directly into Dash callbacks for **real-time, user-driven insights**.  
@@ -29,4 +28,3 @@ Now that pandas and Dash are playing so well together, I’m thinking bigger—m
 💬 **Question:** If you could add one dynamic filter to a dashboard you use daily, what would it be?  
 
 #100DaysOfCode #DataScience #Python #Pandas #Dash #DataVisualization #Day19of21
-```

@@ -1,4 +1,3 @@
-```markdown
 # Day 20: Deployment Ready – Best Practices  
 **Week 3 · Difficulty: Advanced · Duration: 3–5 minutes**
 
@@ -142,4 +141,3 @@ if __name__ == '__main__':
 ✅ I can prepare a Dash app for production deployment using best practices.
 
 ---
-```

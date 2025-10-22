@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 13 Hands-On Exercises: Styling & Theming Visualizations
 
 ---
@@ -160,4 +159,3 @@ if __name__ == "__main__":
 
 **Expected Output:**  
 A mini dashboard with two consistently themed charts side-by-side, unified by color palette, template style, and branded title, showing both ratings and sales data in a publication-ready format.
-```

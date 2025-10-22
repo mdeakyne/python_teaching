@@ -1,4 +1,3 @@
-```markdown
 ## DAY 14 – Mini-Project: Complete EDA Dashboard (Static) – Solutions
 
 ---
@@ -210,4 +209,3 @@ Complex dashboards can be built in Plotly by preparing separate data summaries a
 3. Using too many bins in the ratings histogram, making patterns harder to see.
 
 ---
-```

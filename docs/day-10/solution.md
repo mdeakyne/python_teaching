@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Interactive Scatter Plot (EASY, ~5 min)
 
 ### 1. Complete Working Code
@@ -195,4 +194,3 @@ Combining Plotly's `updatemenus` with trace filtering creates powerful interacti
 3. Not resetting index after grouping, leading to errors when plotting.
 
 ---
-```

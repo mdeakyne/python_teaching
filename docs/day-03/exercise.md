@@ -1,4 +1,3 @@
-```markdown
 ## 📝 Day 3 Hands-On Exercises – Data Selection & Filtering
 
 ### Task 1 – Easy: Selecting Columns for Key Book Info
@@ -98,4 +97,3 @@ print(top_gaiman_books_df[["title", "price", "rating"]])
 
 **Expected Output (Example Description):**
 A table listing Neil Gaiman’s books under $15 that have an average rating of 4.5 or more — showing the title, price, and rating side-by-side.
-```

@@ -1,4 +1,3 @@
-```markdown
 ## Task 1 – Parsing and Setting Datetime Index (Easy – ~5 min)
 
 **Goal:** Load `sales.csv`, parse the `date` column as a datetime, and set it as the DataFrame index.
@@ -93,4 +92,3 @@ books_df = pd.read_csv("books.csv")
 - A DataFrame where each genre has a time series of monthly sales totals.
 - Rolling average column shows smoothed sales trends.
 - Ready to feed into a Dash line chart to compare genres over time.
-```
