@@ -78,6 +78,23 @@ python -m http.server 8000
 
 ## Troubleshooting
 
+### Deploy Fails with "Not Found (404)"
+
+**Error message:**
+```
+Error: Creating Pages deployment failed
+Error: HttpError: Not Found
+```
+
+**Cause:** GitHub Pages hasn't been enabled in repository settings yet.
+
+**Fix:**
+1. Go to **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Re-run the failed workflow (or push a new commit)
+
+This must be done BEFORE the first deployment. After enabling Pages once, all future deployments will work automatically.
+
 ### Build Fails
 
 **Check the Actions log:**
@@ -165,6 +182,45 @@ on:
       - main
       - dev  # Add this line
 ```
+
+---
+
+## Testing Your Deployment
+
+### Automated Test Script
+
+Run the included test script to verify your deployment:
+
+```bash
+./test_deployment.sh
+```
+
+This will test:
+- ✅ Homepage loads (200 OK)
+- ✅ Day 1 lesson accessible
+- ✅ Day 10 lesson accessible (mid-point check)
+- ✅ Day 21 capstone accessible
+- ✅ Search functionality works
+- ✅ Navigation/TOC present
+
+**If site isn't deployed yet:**
+The script will show warnings and exit with a helpful message. Wait 2-3 minutes and run again.
+
+**Example output:**
+```
+1. Homepage                              ✓ PASS (200 OK, content verified)
+2. Day 1 Lesson                          ✓ PASS (200 OK, content verified)
+...
+✓ All tests passed!
+Your bootcamp is live at: https://mdeakyne.github.io/python_teaching/
+```
+
+### Manual Testing
+
+Visit these URLs to verify:
+- Homepage: https://mdeakyne.github.io/python_teaching/
+- Day 1: https://mdeakyne.github.io/python_teaching/day-01/lesson.html
+- Day 21: https://mdeakyne.github.io/python_teaching/day-21/lesson.html
 
 ---
 
