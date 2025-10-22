@@ -1,0 +1,758 @@
+{
+  "title": "21-Day Pandas & Dash Visualization Bootcamp",
+  "description": "Master data visualization from pandas fundamentals to advanced Dash dashboards",
+  "days": [
+    {
+      "day_number": 1,
+      "title": "Environment Setup & Generating Synthetic Book Data",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 1,
+      "objectives": [
+        "Set up Python environment with pandas, jupyter, and visualization libraries",
+        "Generate synthetic book sales datasets using pandas",
+        "Understand DataFrame structure and basic data types"
+      ],
+      "key_concepts": [
+        "environment setup",
+        "synthetic data",
+        "DataFrames",
+        "CSV export"
+      ],
+      "prerequisite_skills": [
+        "basic python",
+        "pip/uv package management"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 2,
+      "title": "DataFrame Basics - Creating & Inspecting Data",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 1,
+      "objectives": [
+        "Load book data from CSV files",
+        "Inspect DataFrames with head(), tail(), info(), describe()",
+        "Understand DataFrame indexes and columns"
+      ],
+      "key_concepts": [
+        "reading CSVs",
+        "DataFrame inspection",
+        "data types",
+        "basic statistics"
+      ],
+      "prerequisite_skills": [
+        "pandas installation",
+        "jupyter notebooks"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 3,
+      "title": "Data Selection & Filtering - Finding the Right Books",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 1,
+      "objectives": [
+        "Select specific columns and rows from book data",
+        "Filter books by genre, price, and rating",
+        "Use boolean indexing for complex queries"
+      ],
+      "key_concepts": [
+        "column selection",
+        "loc/iloc",
+        "boolean indexing",
+        "query method"
+      ],
+      "prerequisite_skills": [
+        "DataFrame basics",
+        "conditional operators"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 4,
+      "title": "Data Cleaning - Handling Missing Reviews",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 1,
+      "objectives": [
+        "Identify missing values in review data",
+        "Fill or drop missing values appropriately",
+        "Convert data types and clean string data"
+      ],
+      "key_concepts": [
+        "NaN handling",
+        "dropna/fillna",
+        "data type conversion",
+        "string cleaning"
+      ],
+      "prerequisite_skills": [
+        "DataFrame filtering",
+        "data inspection"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 5,
+      "title": "Aggregation & GroupBy - Sales by Genre",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 1,
+      "objectives": [
+        "Group book sales by genre and author",
+        "Calculate summary statistics per group",
+        "Create pivot tables for cross-tabulation"
+      ],
+      "key_concepts": [
+        "groupby",
+        "aggregation functions",
+        "pivot tables",
+        "summary statistics"
+      ],
+      "prerequisite_skills": [
+        "data filtering",
+        "basic statistics"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 6,
+      "title": "Merging Datasets - Authors, Books, Sales",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 1,
+      "objectives": [
+        "Merge author and book DataFrames",
+        "Combine sales data with book information",
+        "Handle different join types (inner, outer, left, right)"
+      ],
+      "key_concepts": [
+        "merge",
+        "join",
+        "concat",
+        "merge keys",
+        "join types"
+      ],
+      "prerequisite_skills": [
+        "DataFrame operations",
+        "relational thinking"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 7,
+      "title": "Time Series Basics - Daily Book Sales Trends",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 1,
+      "objectives": [
+        "Parse datetime columns in sales data",
+        "Resample daily sales to weekly/monthly",
+        "Calculate rolling averages and trends"
+      ],
+      "key_concepts": [
+        "datetime parsing",
+        "time series indexing",
+        "resampling",
+        "rolling windows"
+      ],
+      "prerequisite_skills": [
+        "groupby",
+        "aggregation"
+      ],
+      "related_skills": [
+        "loading-and-exploring-interaction-matrix-data-with-pandas",
+        "selecting-data-with-pandas-loc",
+        "random-sampling-with-pandas",
+        "boolean-indexing-in-pandas",
+        "calculating-summary-statistics-with-pandas",
+        "selecting-dataframe-columns-in-pandas",
+        "grouping-and-aggregating-data-in-pandas",
+        "filtering-rows-with-logical-conditions-in-pandas",
+        "modifying-data-in-pandas-dataframes",
+        "reading-csv-files-into-pandas-dataframes"
+      ]
+    },
+    {
+      "day_number": 8,
+      "title": "Matplotlib Basics - First Charts",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 2,
+      "objectives": [
+        "Create line charts of sales trends",
+        "Make bar charts comparing genres",
+        "Customize colors, labels, and titles"
+      ],
+      "key_concepts": [
+        "matplotlib pyplot",
+        "line charts",
+        "bar charts",
+        "basic customization"
+      ],
+      "prerequisite_skills": [
+        "pandas basics",
+        "time series data"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 9,
+      "title": "Seaborn Statistical Plots - Distribution Analysis",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 2,
+      "objectives": [
+        "Visualize book price distributions with histograms",
+        "Create box plots for rating analysis",
+        "Use violin plots for multi-genre comparisons"
+      ],
+      "key_concepts": [
+        "seaborn",
+        "histograms",
+        "box plots",
+        "violin plots",
+        "distributions"
+      ],
+      "prerequisite_skills": [
+        "matplotlib basics",
+        "summary statistics"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 10,
+      "title": "Plotly Express - Interactive Basics",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 2,
+      "objectives": [
+        "Create interactive scatter plots for price vs sales",
+        "Build hover-enabled bar charts",
+        "Add interactivity to time series plots"
+      ],
+      "key_concepts": [
+        "plotly express",
+        "interactive charts",
+        "hover data",
+        "scatter plots"
+      ],
+      "prerequisite_skills": [
+        "matplotlib",
+        "seaborn"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 11,
+      "title": "Advanced Plotly - Multiple Traces & Subplots",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 2,
+      "objectives": [
+        "Create multi-line charts with different genres",
+        "Build subplot grids for comprehensive views",
+        "Customize plot layouts and themes"
+      ],
+      "key_concepts": [
+        "plotly graph objects",
+        "subplots",
+        "multiple traces",
+        "layout customization"
+      ],
+      "prerequisite_skills": [
+        "plotly express",
+        "data aggregation"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 12,
+      "title": "Data Storytelling - Choosing the Right Chart",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 2,
+      "objectives": [
+        "Match chart types to analysis questions",
+        "Create compelling visual narratives",
+        "Combine multiple visualizations for insights"
+      ],
+      "key_concepts": [
+        "chart selection",
+        "visual storytelling",
+        "annotation",
+        "emphasis"
+      ],
+      "prerequisite_skills": [
+        "multiple chart types",
+        "data analysis"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 13,
+      "title": "Styling & Theming Visualizations",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 2,
+      "objectives": [
+        "Apply consistent color schemes across charts",
+        "Use professional templates and themes",
+        "Prepare publication-ready visualizations"
+      ],
+      "key_concepts": [
+        "color palettes",
+        "themes",
+        "style sheets",
+        "branding"
+      ],
+      "prerequisite_skills": [
+        "plotly",
+        "matplotlib",
+        "seaborn"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 14,
+      "title": "Mini-Project: Complete EDA Dashboard (Static)",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 2,
+      "objectives": [
+        "Perform end-to-end exploratory data analysis",
+        "Create multi-panel static dashboard",
+        "Generate comprehensive sales insights report"
+      ],
+      "key_concepts": [
+        "EDA workflow",
+        "multi-chart layouts",
+        "insight generation",
+        "reporting"
+      ],
+      "prerequisite_skills": [
+        "all week 1-2 skills"
+      ],
+      "related_skills": [
+        "customizing-plotly-figure-layouts",
+        "embedding-plotly-visualizations-in-dash-graph-component",
+        "customizing-plotly-express-line-charts",
+        "formatting-numbers-in-plotly-hover-tooltips",
+        "creating-basic-line-charts-with-plotly-express",
+        "combining-multiple-plotly-traces-into-one-figure",
+        "creating-pie-charts-with-plotly-express",
+        "creating-pie-charts-with-plotly-graph-objects",
+        "building-interactive-dashboards-with-plotly-dash",
+        "creating-a-plotly-contour-plot",
+        "customizing-dependency-visualizations-with-displacy",
+        "visualizing-data-with-matplotlib-in-a-tkinter-gui",
+        "creating-dependency-tree-visualizations-with-displacy",
+        "visualizing-support-vector-machine-models-in-dash",
+        "visualizing-likelihood-prior-and-posterior-distributions"
+      ]
+    },
+    {
+      "day_number": 15,
+      "title": "Dash Fundamentals - First App",
+      "duration_min": 60,
+      "difficulty": "beginner",
+      "week": 3,
+      "objectives": [
+        "Set up Dash application structure",
+        "Create simple layout with HTML components",
+        "Display static charts in Dash"
+      ],
+      "key_concepts": [
+        "Dash app",
+        "layout",
+        "HTML components",
+        "dcc.Graph"
+      ],
+      "prerequisite_skills": [
+        "plotly",
+        "basic web concepts"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    },
+    {
+      "day_number": 16,
+      "title": "Dash Core Components - Inputs & Controls",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 3,
+      "objectives": [
+        "Add dropdowns for genre selection",
+        "Create date range pickers for time filtering",
+        "Implement sliders for price ranges"
+      ],
+      "key_concepts": [
+        "dcc components",
+        "dropdowns",
+        "date pickers",
+        "sliders",
+        "inputs"
+      ],
+      "prerequisite_skills": [
+        "Dash basics",
+        "HTML layout"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    },
+    {
+      "day_number": 17,
+      "title": "Callbacks - Making It Interactive",
+      "duration_min": 60,
+      "difficulty": "intermediate",
+      "week": 3,
+      "objectives": [
+        "Write callback functions to update charts",
+        "Connect inputs to graph outputs",
+        "Handle multiple inputs and outputs"
+      ],
+      "key_concepts": [
+        "callbacks",
+        "Input/Output",
+        "State",
+        "callback chaining"
+      ],
+      "prerequisite_skills": [
+        "Dash components",
+        "Python functions"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    },
+    {
+      "day_number": 18,
+      "title": "Advanced Layouts - Multi-page Dashboard",
+      "duration_min": 60,
+      "difficulty": "advanced",
+      "week": 3,
+      "objectives": [
+        "Create multi-tab dashboard layout",
+        "Build responsive grid layouts",
+        "Implement navigation between pages"
+      ],
+      "key_concepts": [
+        "multi-page apps",
+        "tabs",
+        "grid layouts",
+        "responsive design"
+      ],
+      "prerequisite_skills": [
+        "Dash callbacks",
+        "layout design"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    },
+    {
+      "day_number": 19,
+      "title": "Integrating Pandas with Dash - Live Filtering",
+      "duration_min": 60,
+      "difficulty": "advanced",
+      "week": 3,
+      "objectives": [
+        "Filter DataFrames based on user selections",
+        "Perform live aggregations in callbacks",
+        "Update multiple charts from filtered data"
+      ],
+      "key_concepts": [
+        "pandas in callbacks",
+        "data filtering",
+        "dynamic aggregation",
+        "state management"
+      ],
+      "prerequisite_skills": [
+        "callbacks",
+        "pandas operations"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    },
+    {
+      "day_number": 20,
+      "title": "Deployment Ready - Best Practices",
+      "duration_min": 60,
+      "difficulty": "advanced",
+      "week": 3,
+      "objectives": [
+        "Optimize callback performance",
+        "Implement loading states",
+        "Prepare app for production deployment"
+      ],
+      "key_concepts": [
+        "performance optimization",
+        "caching",
+        "loading states",
+        "deployment"
+      ],
+      "prerequisite_skills": [
+        "full Dash apps",
+        "callbacks"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    },
+    {
+      "day_number": 21,
+      "title": "Capstone: Full-Featured Book Analytics Dashboard",
+      "duration_min": 60,
+      "difficulty": "advanced",
+      "week": 3,
+      "objectives": [
+        "Build complete analytics dashboard",
+        "Implement all learned features",
+        "Deploy production-ready application"
+      ],
+      "key_concepts": [
+        "full-stack integration",
+        "comprehensive dashboard",
+        "deployment",
+        "best practices"
+      ],
+      "prerequisite_skills": [
+        "all bootcamp skills"
+      ],
+      "related_skills": [
+        "implementing-automatic-updates-with-dash-interval",
+        "using-dash-loading-component",
+        "applying-bootstrap-themes-in-dash-apps",
+        "using-dash-callbacks-with-prevent_initial_call",
+        "using-dccloading-to-improve-user-experience-in-dash",
+        "creating-advanced-dash-layouts-and-graphs",
+        "working-with-dccdropdown-in-dash",
+        "visualizing-support-vector-machine-models-in-dash",
+        "adding-interactivity-with-dash-callbacks",
+        "implementing-dash-bootstrap-components-for-enhanced-ui"
+      ]
+    }
+  ],
+  "datasets": []
+}

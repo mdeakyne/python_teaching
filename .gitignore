@@ -9,11 +9,19 @@ wheels/
 # Virtual environments
 .venv
 
-# Hidden training materials (solutions, answer keys, instructor notes)
+# Behind-the-scenes AI content generation materials
+references/
+skills.md
+skills/
+scripts/
+src/
 solutions/
-references*
-skills*
-scripts*
+
+# AI quality reports and internal docs
+CONTENT_QUALITY_REPORT.md
+NEXT_STEPS.md
+UV_MIGRATION_COMPLETE.md
+*_REPORT.md
 
 # Environment variables and secrets
 .env.local

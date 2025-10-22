@@ -1,62 +1,219 @@
+# 21-Day Pandas & Dash Visualization Bootcamp
 # Table of Contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
 root: index
+
 chapters:
-  - file: getting-started/index
-    title: Getting Started
+  # Week 1: Pandas Data Foundations
+  - file: day-01/lesson
+    title: "Day 1: Environment Setup & Data Generation"
     sections:
-      - file: getting-started/installation
-      - file: getting-started/setup
-      - file: getting-started/how-to-use
+      - file: day-01/exercise
+        title: Exercise
+      - file: day-01/solution
+        title: Solution
+      - file: day-01/linkedin-post
+        title: LinkedIn Post
 
-  - file: data-science/index
-    title: Data Science & Analysis
+  - file: day-02/lesson
+    title: "Day 2: DataFrame Basics"
     sections:
-      - file: data-science/lessons/index
-        title: Lessons
-        sections:
-          - file: data-science/lessons/lesson-01-python-for-data-science-setup
-            title: "Lesson 01: Setup"
-          - file: data-science/lessons/lesson-02-introduction-to-pandas-dataframes
-            title: "Lesson 02: DataFrames"
-          - file: data-science/lessons/lesson-03-data-selection-filtering
-            title: "Lesson 03: Selection & Filtering"
-      - file: data-science/exercises/index
-        title: Exercises
-      - file: data-science/projects/index
-        title: Projects
+      - file: day-02/exercise
+        title: Exercise
+      - file: day-02/solution
+        title: Solution
+      - file: day-02/linkedin-post
+        title: LinkedIn Post
 
-  - file: web-development/index
-    title: Web Development
+  - file: day-03/lesson
+    title: "Day 3: Data Selection & Filtering"
     sections:
-      - file: web-development/lessons/index
-        title: Lessons
-      - file: web-development/exercises/index
-        title: Exercises
-      - file: web-development/projects/index
-        title: Projects
+      - file: day-03/exercise
+        title: Exercise
+      - file: day-03/solution
+        title: Solution
+      - file: day-03/linkedin-post
+        title: LinkedIn Post
 
-  - file: automation/index
-    title: Automation & Scripting
+  - file: day-04/lesson
+    title: "Day 4: Data Cleaning"
     sections:
-      - file: automation/lessons/index
-        title: Lessons
-      - file: automation/exercises/index
-        title: Exercises
-      - file: automation/projects/index
-        title: Projects
+      - file: day-04/exercise
+        title: Exercise
+      - file: day-04/solution
+        title: Solution
+      - file: day-04/linkedin-post
+        title: LinkedIn Post
 
-  - file: testing/index
-    title: Testing & Quality
+  - file: day-05/lesson
+    title: "Day 5: Aggregation & GroupBy"
     sections:
-      - file: testing/lessons/index
-        title: Lessons
-      - file: testing/exercises/index
-        title: Exercises
-      - file: testing/projects/index
-        title: Projects
+      - file: day-05/exercise
+        title: Exercise
+      - file: day-05/solution
+        title: Solution
+      - file: day-05/linkedin-post
+        title: LinkedIn Post
 
-  - file: references/index
-    title: Reference Materials
+  - file: day-06/lesson
+    title: "Day 6: Merging Datasets"
+    sections:
+      - file: day-06/exercise
+        title: Exercise
+      - file: day-06/solution
+        title: Solution
+      - file: day-06/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-07/lesson
+    title: "Day 7: Time Series Basics"
+    sections:
+      - file: day-07/exercise
+        title: Exercise
+      - file: day-07/solution
+        title: Solution
+      - file: day-07/linkedin-post
+        title: LinkedIn Post
+
+  # Week 2: Visualization Foundations
+  - file: day-08/lesson
+    title: "Day 8: Matplotlib Basics"
+    sections:
+      - file: day-08/exercise
+        title: Exercise
+      - file: day-08/solution
+        title: Solution
+      - file: day-08/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-09/lesson
+    title: "Day 9: Seaborn Statistical Plots"
+    sections:
+      - file: day-09/exercise
+        title: Exercise
+      - file: day-09/solution
+        title: Solution
+      - file: day-09/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-10/lesson
+    title: "Day 10: Plotly Express Interactive Charts"
+    sections:
+      - file: day-10/exercise
+        title: Exercise
+      - file: day-10/solution
+        title: Solution
+      - file: day-10/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-11/lesson
+    title: "Day 11: Advanced Plotly Techniques"
+    sections:
+      - file: day-11/exercise
+        title: Exercise
+      - file: day-11/solution
+        title: Solution
+      - file: day-11/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-12/lesson
+    title: "Day 12: Data Storytelling"
+    sections:
+      - file: day-12/exercise
+        title: Exercise
+      - file: day-12/solution
+        title: Solution
+      - file: day-12/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-13/lesson
+    title: "Day 13: Styling & Theming"
+    sections:
+      - file: day-13/exercise
+        title: Exercise
+      - file: day-13/solution
+        title: Solution
+      - file: day-13/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-14/lesson
+    title: "Day 14: Mini-Project - EDA Dashboard"
+    sections:
+      - file: day-14/exercise
+        title: Exercise
+      - file: day-14/solution
+        title: Solution
+      - file: day-14/linkedin-post
+        title: LinkedIn Post
+
+  # Week 3: Dash & Advanced Interactivity
+  - file: day-15/lesson
+    title: "Day 15: Dash Fundamentals"
+    sections:
+      - file: day-15/exercise
+        title: Exercise
+      - file: day-15/solution
+        title: Solution
+      - file: day-15/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-16/lesson
+    title: "Day 16: Dash Core Components"
+    sections:
+      - file: day-16/exercise
+        title: Exercise
+      - file: day-16/solution
+        title: Solution
+      - file: day-16/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-17/lesson
+    title: "Day 17: Callbacks & Interactivity"
+    sections:
+      - file: day-17/exercise
+        title: Exercise
+      - file: day-17/solution
+        title: Solution
+      - file: day-17/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-18/lesson
+    title: "Day 18: Advanced Layouts"
+    sections:
+      - file: day-18/exercise
+        title: Exercise
+      - file: day-18/solution
+        title: Solution
+      - file: day-18/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-19/lesson
+    title: "Day 19: Pandas + Dash Integration"
+    sections:
+      - file: day-19/exercise
+        title: Exercise
+      - file: day-19/solution
+        title: Solution
+      - file: day-19/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-20/lesson
+    title: "Day 20: Deployment & Best Practices"
+    sections:
+      - file: day-20/exercise
+        title: Exercise
+      - file: day-20/solution
+        title: Solution
+      - file: day-20/linkedin-post
+        title: LinkedIn Post
+
+  - file: day-21/lesson
+    title: "Day 21: Capstone Project"
+    sections:
+      - file: day-21/exercise
+        title: Exercise
+      - file: day-21/solution
+        title: Solution
+      - file: day-21/linkedin-post
+        title: LinkedIn Post
