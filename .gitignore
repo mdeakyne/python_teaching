@@ -12,10 +12,13 @@ wheels/
 # Behind-the-scenes AI content generation materials
 references/
 skills.md
-skills/
-scripts/
-src/
-solutions/
+/skills/
+/scripts/
+/src/
+/solutions/
+
+# BUT allow Claude skills directory
+!.claude/skills/
 
 # AI quality reports and internal docs
 CONTENT_QUALITY_REPORT.md
