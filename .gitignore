@@ -44,6 +44,9 @@ docs/.jupyter_cache/
 *.swo
 *~
 
+# Git worktrees
+.worktrees/
+
 # OS
 .DS_Store
 Thumbs.db
