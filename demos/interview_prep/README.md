@@ -11,14 +11,50 @@ These notebooks were created for interview preparation, showcasing:
 - Data visualization best practices
 - Production-quality Python code
 
-## Generated Notebooks
+## Consulting-Style Analysis Reports
 
-Each notebook is self-contained with:
-- Executive summary of the technique
-- Synthetic financial data generation
-- Step-by-step implementation
-- Professional visualizations
-- Business insights and takeaways
+Professional financial consulting reports demonstrating strategic decision support:
+
+### Family Office Reports
+
+**1. Portfolio Rebalancing Analysis** (`fo-rebalancing.ipynb`)
+- **Client:** Harrison Family Office
+- **Question:** Should we rebalance after tech sector gains?
+- **Skills:** Portfolio attribution, sector concentration, risk metrics, rebalancing analysis
+- **Duration:** ~25 minutes
+
+**2. Exit Strategy Analysis** (`fo-exit.ipynb`)
+- **Client:** Harrison Family Office
+- **Question:** Should we exit an underperforming legacy holding?
+- **Skills:** Position performance, opportunity cost, risk-adjusted returns, tax considerations
+- **Duration:** ~20 minutes
+
+### Wealth Management Reports
+
+**3. Client Onboarding Portfolio Recommendation** (`wm-onboarding.ipynb`)
+- **Client:** Apex Wealth Management
+- **Question:** What portfolio should we recommend for a new client?
+- **Skills:** Asset allocation, Modern Portfolio Theory, efficient frontier, diversification
+- **Duration:** ~30 minutes
+
+**4. Portfolio Stress Testing** (`wm-stress-test.ipynb`)
+- **Client:** Apex Wealth Management
+- **Question:** How resilient is the portfolio to market downturns?
+- **Skills:** VaR, CVaR, maximum drawdown, stress scenarios, recovery analysis
+- **Duration:** ~25 minutes
+
+## Report Structure
+
+Each consulting notebook follows professional report format:
+
+1. **Executive Summary** - Key findings and recommendations upfront
+2. **Situation Overview** - Business context and current state
+3. **Data & Methodology** - Analytical approach and assumptions
+4. **Analysis** - Multiple sections with insights
+5. **Visualizations** - Professional charts with business interpretation
+6. **Risk Considerations** - Limitations and assumptions
+7. **Recommendations** - Specific, actionable guidance
+8. **Next Steps** - Implementation roadmap
 
 ## Running the Notebooks
 
@@ -47,11 +83,14 @@ Each notebook can be run top-to-bottom:
 3. Wait for execution to complete
 4. Review outputs and visualizations
 
-## Notebooks Overview
+## Generated Notebooks
 
-| # | Skill | Category | Difficulty |
-|---|-------|----------|------------|
-| (Auto-generated - see notebook files) |
+Each notebook is self-contained with:
+- Executive summary and structured storyline
+- Synthetic financial data generation
+- Step-by-step implementation
+- Professional visualizations
+- Business insights and next steps
 
 ## Data
 
@@ -73,16 +112,24 @@ To customize for specific interviews:
 
 ## Regeneration
 
-To regenerate notebooks with different skills:
+To regenerate consulting notebooks:
 
 ```bash
 cd scripts
 
-# See available skills
-python filter_financial_skills.py
+# List available consulting scenarios
+uv run python generate_consulting_notebooks.py --list
 
-# Generate new notebooks (interactive selection)
-python generate_demo_notebooks.py --interactive --count 3
+# Generate all consulting notebooks
+uv run python generate_consulting_notebooks.py --scenarios all --model mini
+
+# Generate a subset
+uv run python generate_consulting_notebooks.py --scenarios fo_rebalancing,wm_stress_test
+
+# Offline / deterministic template mode
+uv run python generate_consulting_notebooks.py --scenarios all --no-llm
+
+> Tip: The CLI automatically falls back to the deterministic template if the Azure OpenAI call fails.
 ```
 
 ## Validation
