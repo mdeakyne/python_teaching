@@ -16,6 +16,9 @@ Extract ALL technical skills from this content. For each skill, provide:
 8. financial_relevance: Score 0-10 (how relevant to portfolio/investment/risk management)
 9. keywords: List of relevant keywords
 10. example_context: Brief quote or description of how it's explained
+11. tracks: List of relevant learning tracks (e.g., ["financial-analytics", "data-science"])
+12. key_concepts: List of 3-6 key concepts taught (e.g., ["TWR", "geometric linking", "cash flows"])
+13. learning_resources: List of specific resource references (e.g., ["**book-name**: Chapter 3: Portfolio Metrics"])
 
 Return ONLY valid JSON array of skills. No additional text.
 
@@ -31,6 +34,9 @@ Example output format:
     "prerequisites": ["pandas basics", "datetime handling"],
     "financial_relevance": 10,
     "keywords": ["TWR", "returns", "performance", "pandas"],
-    "example_context": "Uses pandas to compute daily returns and geometric linking"
+    "example_context": "Uses pandas to compute daily returns and geometric linking",
+    "tracks": ["financial-analytics", "data-science"],
+    "key_concepts": ["time-weighted returns", "geometric linking", "cash flow independence", "pandas aggregation"],
+    "learning_resources": ["**financial-python**: Chapter 3: Portfolio Metrics"]
   }}
 ]

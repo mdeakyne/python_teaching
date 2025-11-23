@@ -25,10 +25,92 @@ class Skill:
     financial_relevance: int
     keywords: List[str]
     example_context: str
+    tracks: Optional[List[str]] = None
+    key_concepts: Optional[List[str]] = None
+    learning_resources: Optional[List[str]] = None
 
     def to_dict(self) -> dict:
         """Convert to dictionary."""
         return asdict(self)
+
+    def to_markdown(self, book_name: str = "") -> str:
+        """Convert skill to Claude-style markdown format.
+
+        Args:
+            book_name: Name of the source book for learning resources
+
+        Returns:
+            Markdown-formatted skill content
+        """
+        # Generate slug from skill name
+        slug = self.skill_name.lower().replace(" ", "-").replace("/", "-")
+
+        # Build markdown content
+        lines = [
+            f"# {self.skill_name}",
+            "",
+            f"**Tracks**: {', '.join(self.tracks or ['financial-analytics'])}",
+            f"**Difficulty**: {self.difficulty}",
+            f"**Category**: {self.category}",
+            "",
+            "## Description",
+            "",
+            self.description,
+            "",
+        ]
+
+        # Add key concepts
+        if self.key_concepts:
+            lines.extend(
+                [
+                    "## Key Concepts",
+                    "",
+                ]
+            )
+            for concept in self.key_concepts:
+                lines.append(f"- {concept}")
+            lines.append("")
+
+        # Add prerequisites
+        if self.prerequisites:
+            lines.extend(
+                [
+                    "## Prerequisites",
+                    "",
+                ]
+            )
+            for prereq in self.prerequisites:
+                # Convert to markdown link format
+                prereq_slug = prereq.lower().replace(" ", "-").replace("/", "-")
+                lines.append(f"- [{prereq}](./{prereq_slug}.md)")
+            lines.append("")
+
+        # Add learning resources
+        if self.learning_resources or self.source_chapter:
+            lines.extend(
+                [
+                    "## Learning Resources",
+                    "",
+                ]
+            )
+            if self.learning_resources:
+                for resource in self.learning_resources:
+                    lines.append(f"- {resource}")
+            elif self.source_chapter and book_name:
+                lines.append(f"- **{book_name}**: {self.source_chapter}")
+            lines.append("")
+
+        # Add footer
+        lines.extend(
+            [
+                "---",
+                "",
+                f"*Source: {book_name or 'unknown'}*",
+                "",
+            ]
+        )
+
+        return "\n".join(lines)
 
 
 def extract_skills_from_markdown(
@@ -134,6 +216,9 @@ def extract_skills_from_markdown(
             financial_relevance=skill_data.get("financial_relevance", 5),
             keywords=skill_data.get("keywords", []),
             example_context=skill_data.get("example_context", ""),
+            tracks=skill_data.get("tracks", ["financial-analytics"]),
+            key_concepts=skill_data.get("key_concepts", []),
+            learning_resources=skill_data.get("learning_resources", []),
         )
         skills.append(skill)
 
@@ -161,3 +246,31 @@ def save_skills_to_json(
     }
 
     output_file.write_text(json.dumps(data, indent=2))
+
+
+def save_skills_to_markdown(skills: List[Skill], output_dir: str, book_title: str):
+    """Save skills as individual markdown files.
+
+    Args:
+        skills: List of Skill objects
+        output_dir: Directory to save markdown files
+        book_title: Title of source book for references
+    """
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    # Convert book title to a clean book name for references
+    book_name = book_title.lower().replace(" ", "-").replace("_", "-")
+
+    for skill in skills:
+        # Generate filename from skill name
+        filename = skill.skill_name.lower().replace(" ", "-").replace("/", "-")
+        filename = filename.replace("(", "").replace(")", "").replace(":", "")
+        filename = f"{filename}.md"
+
+        # Generate markdown content
+        markdown_content = skill.to_markdown(book_name=book_name)
+
+        # Write to file
+        file_path = output_path / filename
+        file_path.write_text(markdown_content)

@@ -7,7 +7,11 @@ from datetime import date
 from pathlib import Path
 
 from pdf_converter import convert_pdf_to_markdown, list_pdfs
-from skill_extractor import extract_skills_from_markdown, save_skills_to_json
+from skill_extractor import (
+    extract_skills_from_markdown,
+    save_skills_to_json,
+    save_skills_to_markdown,
+)
 
 
 def main():
@@ -102,13 +106,19 @@ def main():
 
         print(f"  ✓ Extracted {len(skills)} skills")
 
-        # Step 3: Save to JSON
-        print("Step 3: Saving skill taxonomy...")
+        # Step 3: Save to markdown files
+        print("Step 3: Saving skills as markdown files...")
+        # Create subdirectory for this book's skills
+        skills_subdir = output_dir / "financial-analytics"
+
+        save_skills_to_markdown(skills, str(skills_subdir), book_title)
+        print(f"  ✓ Saved {len(skills)} markdown files to {skills_subdir}")
+
+        # Also save JSON for backward compatibility
         json_name = pdf_name.replace(".pdf", "_skills.json")
         json_path = output_dir / json_name
-
         save_skills_to_json(skills, str(json_path), book_title, extraction_date)
-        print(f"  ✓ Saved to {json_path}")
+        print(f"  ✓ Saved JSON to {json_path}")
 
         # Print summary
         categories = {}
