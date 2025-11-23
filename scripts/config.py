@@ -46,7 +46,7 @@ class AzureConfig:
         }
 
         # Check for missing variables
-        missing = [k for k, v in required.items() if v is None]
+        missing = [k for k, v in required.items() if not v]
         if missing:
             raise ValueError(
                 f"Missing required environment variables: {', '.join(missing)}"
