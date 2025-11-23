@@ -1,0 +1,83 @@
+You are generating a professional Jupyter notebook for a financial analytics demo.
+
+SKILL DETAILS:
+{skill_details}
+
+REQUIREMENTS:
+- Create a complete, executable Jupyter notebook
+- Target audience: Interview for managed services role at financial management firm
+- Focus: Portfolio, investment, and risk analytics
+- Use synthetic financial data (5-10 stocks, 2-5 years daily prices)
+- Professional narrative suitable for presenting to executives
+- All code must be executable and production-quality
+
+NOTEBOOK STRUCTURE:
+
+# {skill_name}: {practical_title}
+*Financial Analytics Demo*
+
+## 1. Executive Summary
+- What: [Brief description and business value]
+- Why: [Relevance to portfolio/investment/risk management]
+- Key Metrics: [What we'll calculate]
+
+## 2. Environment Setup
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+from datetime import datetime, timedelta
+
+# Set style
+plt.style.use('seaborn-v0_8-darkgrid')
+sns.set_palette("husl")
+```
+
+## 3. Synthetic Data Generation
+```python
+# Generate realistic financial data
+# Parameters:
+# - 5-10 stocks (use realistic symbols: AAPL, MSFT, GOOGL, etc.)
+# - 2-5 years daily prices
+# - Annual returns: 8-12%
+# - Volatility: 15-25%
+# - Risk-free rate: 4%
+# - 252 trading days per year
+```
+
+## 4. Analysis & Implementation
+[Step-by-step code with narrative explanations]
+[Highlight best practices]
+[Handle edge cases]
+
+## 5. Visualization
+[Clear, professional charts with insights]
+
+## 6. Key Takeaways
+- Business interpretation
+- When to use this technique
+- Extensions/next steps
+
+Generate ONLY the complete notebook content in JSON format:
+{{
+  "cells": [
+    {{
+      "cell_type": "markdown",
+      "source": ["# Title\\n", "Content"]
+    }},
+    {{
+      "cell_type": "code",
+      "source": ["import pandas as pd"],
+      "outputs": []
+    }}
+  ]
+}}
+
+IMPORTANT:
+- Return ONLY valid JSON
+- All code cells must be executable
+- Use realistic financial data
+- Professional tone throughout
+- No placeholder code - complete implementations only
