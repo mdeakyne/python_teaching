@@ -17,6 +17,9 @@ scripts/
 src/
 solutions/
 
+# Advanced learning paths (keep only for local use)
+learning-paths/advanced-data-pro/
+
 # AI quality reports and internal docs
 CONTENT_QUALITY_REPORT.md
 NEXT_STEPS.md
