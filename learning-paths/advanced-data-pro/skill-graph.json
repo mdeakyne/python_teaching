@@ -1,0 +1,1405 @@
+{
+  "nodes": [
+    {
+      "skill_id": "streaming_databases_001",
+      "skill_name": "Stream Processing Fundamentals",
+      "category": "time_series",
+      "subcategory": "real_time_data_processing",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "event ordering",
+        "latency",
+        "stream ingestion",
+        "fault tolerance"
+      ],
+      "prerequisites": [
+        "basic SQL",
+        "event-driven architecture concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_002",
+      "skill_name": "Materialized Views Construction",
+      "category": "time_series",
+      "subcategory": "data_storage_optimization",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "incremental updates",
+        "CDC",
+        "upsert operations",
+        "stream joins"
+      ],
+      "prerequisites": [
+        "SQL",
+        "stream processing basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_003",
+      "skill_name": "Change Data Capture (CDC)",
+      "category": "data_cleaning",
+      "subcategory": "data_ingestion",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "change tracking",
+        "event sourcing",
+        "Debezium integration",
+        "upsert handling"
+      ],
+      "prerequisites": [
+        "database transactions",
+        "SQL"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_004",
+      "skill_name": "Push vs Pull Queries",
+      "category": "time_series",
+      "subcategory": "query_execution_models",
+      "difficulty": "beginner",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "continuous query",
+        "on-demand query",
+        "latency trade-offs"
+      ],
+      "prerequisites": [
+        "SQL basics",
+        "stream processing fundamentals"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_005",
+      "skill_name": "Serving Synchronous and Asynchronous Data",
+      "category": "time_series",
+      "subcategory": "real_time_data_serving",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "latency management",
+        "query concurrency",
+        "data freshness"
+      ],
+      "prerequisites": [
+        "query execution models",
+        "stream processing basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_006",
+      "skill_name": "Stateful Stream Transformations",
+      "category": "time_series",
+      "subcategory": "stream_transformation",
+      "difficulty": "advanced",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "state management",
+        "windowing",
+        "aggregation",
+        "fault tolerance"
+      ],
+      "prerequisites": [
+        "stream processing fundamentals",
+        "state management concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_007",
+      "skill_name": "Streaming Database Architecture",
+      "category": "time_series",
+      "subcategory": "system_design",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "row-based vs column-based",
+        "edge streaming",
+        "debuggability"
+      ],
+      "prerequisites": [
+        "database systems",
+        "stream processing"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "streaming_databases_008",
+      "skill_name": "Consistency Models in Stream Processing",
+      "category": "time_series",
+      "subcategory": "data_consistency",
+      "difficulty": "advanced",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "ACID",
+        "eventual consistency",
+        "ordering guarantees",
+        "transaction analysis"
+      ],
+      "prerequisites": [
+        "database transactions",
+        "stream processing fundamentals"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_001",
+      "skill_name": "Designing Actionable, Timely, and Relevant Metrics",
+      "category": "statistical_methods",
+      "subcategory": "metrics_design",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "measurability",
+        "actionability",
+        "relevance",
+        "timeliness",
+        "KPI design"
+      ],
+      "prerequisites": [
+        "basic statistics",
+        "business domain knowledge",
+        "data collection methods"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_002",
+      "skill_name": "Metrics Decomposition",
+      "category": "statistical_methods",
+      "subcategory": "decomposition_analysis",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "funnel analysis",
+        "stock-flow relationships",
+        "P\u00d7Q decomposition",
+        "metric breakdown"
+      ],
+      "prerequisites": [
+        "basic algebra",
+        "metric design",
+        "data aggregation"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_003",
+      "skill_name": "Growth Decomposition Analysis",
+      "category": "statistical_methods",
+      "subcategory": "growth_analysis",
+      "difficulty": "advanced",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "additive decomposition",
+        "multiplicative decomposition",
+        "mix-rate decomposition",
+        "growth drivers"
+      ],
+      "prerequisites": [
+        "intermediate statistics",
+        "algebra",
+        "business growth concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_004",
+      "skill_name": "2\u00d72 Experimental Design",
+      "category": "statistical_methods",
+      "subcategory": "experimental_design",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "factorial design",
+        "interaction analysis",
+        "controlled experiments",
+        "workflow prioritization"
+      ],
+      "prerequisites": [
+        "basic statistics",
+        "hypothesis testing",
+        "experimental setup"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_005",
+      "skill_name": "Building Data-Driven Business Cases",
+      "category": "statistical_methods",
+      "subcategory": "business_case_development",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "ROI estimation",
+        "cost-benefit analysis",
+        "strategic alignment",
+        "data justification"
+      ],
+      "prerequisites": [
+        "business analysis",
+        "data interpretation",
+        "ROI calculation"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_006",
+      "skill_name": "Lift Analysis",
+      "category": "statistical_methods",
+      "subcategory": "model_evaluation",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "lift calculation",
+        "baseline comparison",
+        "bias identification",
+        "performance improvement"
+      ],
+      "prerequisites": [
+        "model evaluation",
+        "statistics",
+        "bias understanding"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_the_har_007",
+      "skill_name": "Data Storytelling and Narrative Development",
+      "category": "visualization",
+      "subcategory": "data_storytelling",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "clarity",
+        "engagement",
+        "story structure",
+        "data-driven narrative"
+      ],
+      "prerequisites": [
+        "basic visualization",
+        "communication skills",
+        "data interpretation"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__001",
+      "skill_name": "Implement Stateful Applications with Ray Actors",
+      "category": "time_series",
+      "subcategory": "distributed_state_management",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "actor model",
+        "state persistence",
+        "remote actors",
+        "scaling actors"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "distributed computing concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__002",
+      "skill_name": "Build Workflow Management in Ray",
+      "category": "time_series",
+      "subcategory": "workflow_scheduling",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "workflow orchestration",
+        "task scheduling",
+        "dependency management",
+        "Ray tasks"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "task scheduling concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__003",
+      "skill_name": "Use Ray for Batch and Stream Processing",
+      "category": "time_series",
+      "subcategory": "data_processing",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "batch jobs",
+        "streaming pipelines",
+        "unified processing",
+        "Ray integration"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "data streaming concepts",
+        "batch processing"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__004",
+      "skill_name": "Apply Advanced Data Processing with Ray",
+      "category": "statistical_methods",
+      "subcategory": "distributed_data_processing",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "fault tolerance",
+        "serialization",
+        "resource management",
+        "placement groups"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "data processing",
+        "distributed systems"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__005",
+      "skill_name": "Build Microservices with Ray Serve",
+      "category": "portfolio_analysis",
+      "subcategory": "model_serving",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "microservice architecture",
+        "deployment composition",
+        "model serving",
+        "Ray Serve"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "microservices architecture",
+        "model deployment"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__006",
+      "skill_name": "Implement Reliable Ray Applications",
+      "category": "risk_metrics",
+      "subcategory": "fault_tolerance",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "fault tolerance",
+        "autoscaler",
+        "placement groups",
+        "runtime environments"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "distributed systems",
+        "error handling"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__007",
+      "skill_name": "Integrate Apache Kafka with Ray for Streaming",
+      "category": "time_series",
+      "subcategory": "streaming_data_integration",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "Kafka APIs",
+        "key-based processing",
+        "key-independent processing",
+        "scaling streams"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "Ray basics",
+        "Apache Kafka concepts",
+        "stream processing"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "financial_data_engin_001",
+      "skill_name": "Designing Financial Data Identification and Entity Systems",
+      "category": "data_cleaning",
+      "subcategory": "data_modeling",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "unique identifiers",
+        "entity resolution",
+        "data consistency",
+        "reference data management"
+      ],
+      "prerequisites": [
+        "database design",
+        "financial instruments knowledge",
+        "data modeling concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "financial_data_engin_002",
+      "skill_name": "Implementing Financial Data Governance Frameworks",
+      "category": "data_cleaning",
+      "subcategory": "data_governance",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "data quality",
+        "regulatory compliance",
+        "metadata standards",
+        "stewardship roles"
+      ],
+      "prerequisites": [
+        "regulatory compliance knowledge",
+        "data quality management",
+        "metadata management"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "financial_data_engin_003",
+      "skill_name": "Building Financial Data Pipelines with Open Source Tools and APIs",
+      "category": "data_cleaning",
+      "subcategory": "data_pipeline_development",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "data ingestion",
+        "transformation",
+        "loading",
+        "API integration",
+        "workflow automation"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "API integration",
+        "ETL concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "financial_data_engin_004",
+      "skill_name": "Understanding the Financial Data Ecosystem",
+      "category": "data_cleaning",
+      "subcategory": "domain_knowledge",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "market participants",
+        "data vendors",
+        "file formats",
+        "industry standards"
+      ],
+      "prerequisites": [
+        "basic finance concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "financial_data_engin_005",
+      "skill_name": "Managing the Financial Data Engineering Lifecycle",
+      "category": "data_cleaning",
+      "subcategory": "data_pipeline_management",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "data ingestion",
+        "transformation",
+        "loading",
+        "deployment",
+        "monitoring"
+      ],
+      "prerequisites": [
+        "ETL concepts",
+        "data pipeline development",
+        "deployment processes"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "financial_data_engin_006",
+      "skill_name": "Designing Financial Data Workflows",
+      "category": "data_cleaning",
+      "subcategory": "workflow_design",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "workflow types",
+        "process automation",
+        "data handling sequences"
+      ],
+      "prerequisites": [
+        "process modeling",
+        "financial data knowledge"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_001",
+      "skill_name": "Data Visualization with Matplotlib",
+      "category": "visualization",
+      "subcategory": "charting",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "matplotlib basics",
+        "chart types",
+        "data plotting",
+        "visual encoding"
+      ],
+      "prerequisites": [
+        "Python basics",
+        "data structures"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_002",
+      "skill_name": "Linear Algebra for Data Analysis",
+      "category": "statistical_methods",
+      "subcategory": "mathematics",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "vector operations",
+        "matrix operations",
+        "linear transformations"
+      ],
+      "prerequisites": [
+        "Python basics",
+        "mathematical foundations"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_003",
+      "skill_name": "Statistical Data Description",
+      "category": "statistical_methods",
+      "subcategory": "descriptive_statistics",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "central tendency",
+        "dispersion",
+        "correlation",
+        "Simpson\u2019s paradox"
+      ],
+      "prerequisites": [
+        "Python basics",
+        "basic math"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_004",
+      "skill_name": "Probability and Distributions",
+      "category": "statistical_methods",
+      "subcategory": "probability_theory",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "conditional probability",
+        "Bayes theorem",
+        "normal distribution",
+        "central limit theorem"
+      ],
+      "prerequisites": [
+        "basic statistics",
+        "mathematical foundations"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_005",
+      "skill_name": "Hypothesis Testing and Inference",
+      "category": "statistical_methods",
+      "subcategory": "inferential_statistics",
+      "difficulty": "intermediate",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "p-values",
+        "confidence intervals",
+        "A/B testing",
+        "Bayesian inference"
+      ],
+      "prerequisites": [
+        "probability",
+        "statistics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_006",
+      "skill_name": "Gradient Descent Optimization",
+      "category": "statistical_methods",
+      "subcategory": "optimization",
+      "difficulty": "intermediate",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "gradient estimation",
+        "step size selection",
+        "model fitting",
+        "SGD"
+      ],
+      "prerequisites": [
+        "linear algebra",
+        "calculus"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_007",
+      "skill_name": "Data Acquisition from Files, Web, and APIs",
+      "category": "data_cleaning",
+      "subcategory": "data_collection",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "file reading",
+        "web scraping",
+        "API usage",
+        "data formats"
+      ],
+      "prerequisites": [
+        "Python basics",
+        "HTTP concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_008",
+      "skill_name": "Data Cleaning and Manipulation",
+      "category": "data_cleaning",
+      "subcategory": "data_preprocessing",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "data exploration",
+        "data cleaning",
+        "rescaling",
+        "dimensionality reduction"
+      ],
+      "prerequisites": [
+        "Python basics",
+        "pandas"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_009",
+      "skill_name": "Machine Learning Fundamentals",
+      "category": "statistical_methods",
+      "subcategory": "machine_learning",
+      "difficulty": "intermediate",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "modeling",
+        "overfitting",
+        "underfitting",
+        "bias-variance tradeoff",
+        "feature selection"
+      ],
+      "prerequisites": [
+        "statistics",
+        "linear algebra"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_010",
+      "skill_name": "k-Nearest Neighbors Classification",
+      "category": "statistical_methods",
+      "subcategory": "machine_learning_algorithms",
+      "difficulty": "beginner",
+      "depth": 2,
+      "tags": [],
+      "key_concepts": [
+        "distance metrics",
+        "classification",
+        "curse of dimensionality"
+      ],
+      "prerequisites": [
+        "machine learning fundamentals",
+        "distance metrics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "data_science_from_sc_011",
+      "skill_name": "Naive Bayes Classification",
+      "category": "statistical_methods",
+      "subcategory": "machine_learning_algorithms",
+      "difficulty": "beginner",
+      "depth": 2,
+      "tags": [],
+      "key_concepts": [
+        "Bayes theorem",
+        "classification",
+        "model testing"
+      ],
+      "prerequisites": [
+        "probability",
+        "machine learning fundamentals"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_008",
+      "skill_name": "Simple Linear Regression",
+      "category": "statistical_methods",
+      "subcategory": "regression",
+      "difficulty": "beginner",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "regression equation",
+        "least squares",
+        "residuals",
+        "prediction"
+      ],
+      "prerequisites": [
+        "basic algebra",
+        "scatterplot interpretation"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__001",
+      "skill_name": "Batch Data Parallel Processing with Dask",
+      "category": "data_science",
+      "subcategory": "parallel_computing",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "parallelism",
+        "task scheduling",
+        "data partitioning",
+        "distributed execution"
+      ],
+      "prerequisites": [
+        "Python programming",
+        "pandas basics",
+        "NumPy basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__002",
+      "skill_name": "Distributed System Concepts for Dask",
+      "category": "data_science",
+      "subcategory": "distributed_computing",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "scheduler",
+        "worker nodes",
+        "fault tolerance",
+        "lazy evaluation"
+      ],
+      "prerequisites": [
+        "parallel computing basics",
+        "networking fundamentals"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__003",
+      "skill_name": "Using Dask with Higher-Level APIs",
+      "category": "data_science",
+      "subcategory": "library_integration",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "Dask DataFrame",
+        "parallelized pandas",
+        "NumPy arrays",
+        "machine learning scaling"
+      ],
+      "prerequisites": [
+        "pandas",
+        "NumPy",
+        "scikit-learn basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__004",
+      "skill_name": "GPU Computing with Dask",
+      "category": "data_science",
+      "subcategory": "hardware_acceleration",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "GPU acceleration",
+        "CUDA integration",
+        "parallel execution",
+        "data partitioning"
+      ],
+      "prerequisites": [
+        "parallel computing",
+        "CUDA basics",
+        "NumPy"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__005",
+      "skill_name": "Installing Dask Locally",
+      "category": "data_science",
+      "subcategory": "environment_setup",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "package installation",
+        "environment configuration",
+        "dependency management"
+      ],
+      "prerequisites": [
+        "Python environment setup"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__006",
+      "skill_name": "Dask DataFrame Operations",
+      "category": "data_science",
+      "subcategory": "data_manipulation",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "parallelized DataFrame",
+        "partitioning",
+        "aggregation",
+        "data shuffling"
+      ],
+      "prerequisites": [
+        "pandas",
+        "parallel computing basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__007",
+      "skill_name": "Lazy Evaluation in Dask",
+      "category": "data_science",
+      "subcategory": "execution_model",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "task graph",
+        "execution triggering",
+        "resource optimization"
+      ],
+      "prerequisites": [
+        "Python functions",
+        "parallel computing basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "scaling_python_with__008",
+      "skill_name": "Fault Tolerance in Dask",
+      "category": "data_science",
+      "subcategory": "distributed_computing",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "error handling",
+        "task retries",
+        "worker resilience"
+      ],
+      "prerequisites": [
+        "distributed systems basics",
+        "parallel computing"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_001",
+      "skill_name": "Exploratory Data Analysis",
+      "category": "statistical_methods",
+      "subcategory": "data_exploration",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "location estimates",
+        "variability estimates",
+        "distribution analysis",
+        "categorical data exploration"
+      ],
+      "prerequisites": [
+        "basic statistics",
+        "data visualization basics",
+        "Python or R fundamentals"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_002",
+      "skill_name": "Correlation Analysis",
+      "category": "statistical_methods",
+      "subcategory": "relationship_analysis",
+      "difficulty": "beginner",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "Pearson correlation",
+        "Spearman correlation",
+        "scatterplots",
+        "linear relationships"
+      ],
+      "prerequisites": [
+        "basic statistics",
+        "scatterplot interpretation"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_003",
+      "skill_name": "Random Sampling and Sample Bias Detection",
+      "category": "statistical_methods",
+      "subcategory": "sampling",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "selection bias",
+        "sample representativeness",
+        "randomization",
+        "sample size effects"
+      ],
+      "prerequisites": [
+        "probability basics",
+        "population vs sample concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_004",
+      "skill_name": "Central Limit Theorem Application",
+      "category": "statistical_methods",
+      "subcategory": "distribution_theory",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "sampling distribution",
+        "normal approximation",
+        "law of large numbers"
+      ],
+      "prerequisites": [
+        "probability theory",
+        "distribution properties"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_005",
+      "skill_name": "Bootstrap Resampling",
+      "category": "statistical_methods",
+      "subcategory": "resampling",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "bootstrap sampling",
+        "confidence interval estimation",
+        "sampling variability"
+      ],
+      "prerequisites": [
+        "basic programming in R/Python",
+        "sampling concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_006",
+      "skill_name": "Hypothesis Testing",
+      "category": "statistical_methods",
+      "subcategory": "significance_testing",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "null hypothesis",
+        "alternative hypothesis",
+        "Type I error",
+        "Type II error",
+        "significance level"
+      ],
+      "prerequisites": [
+        "probability basics",
+        "sampling distributions",
+        "p-value interpretation"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_007",
+      "skill_name": "ANOVA (Analysis of Variance)",
+      "category": "statistical_methods",
+      "subcategory": "variance_analysis",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "group mean comparison",
+        "F-statistic",
+        "variance partitioning"
+      ],
+      "prerequisites": [
+        "hypothesis testing",
+        "variance concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "practical_statistics_009",
+      "skill_name": "Multiple Linear Regression",
+      "category": "statistical_methods",
+      "subcategory": "regression",
+      "difficulty": "intermediate",
+      "depth": 2,
+      "tags": [],
+      "key_concepts": [
+        "multiple predictors",
+        "model selection",
+        "cross-validation",
+        "weighted regression"
+      ],
+      "prerequisites": [
+        "simple linear regression",
+        "matrix algebra basics"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "implementing_data_me_001",
+      "skill_name": "Identifying and Defining Data Products",
+      "category": "data_cleaning",
+      "subcategory": "data_product_management",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "data product definition",
+        "interoperability",
+        "domain alignment",
+        "metadata management"
+      ],
+      "prerequisites": [
+        "basic data architecture knowledge",
+        "domain-driven design concepts"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "implementing_data_me_002",
+      "skill_name": "Building a Data Mesh Fabric",
+      "category": "data_cleaning",
+      "subcategory": "data_mesh_architecture",
+      "difficulty": "advanced",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "fabric services",
+        "data product integration",
+        "mesh topology",
+        "service orchestration"
+      ],
+      "prerequisites": [
+        "distributed systems",
+        "API integration",
+        "data governance"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "implementing_data_me_003",
+      "skill_name": "Deploying Data Products in Data Mesh",
+      "category": "data_cleaning",
+      "subcategory": "deployment",
+      "difficulty": "intermediate",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "deployment automation",
+        "service registration",
+        "data product lifecycle",
+        "discoverability"
+      ],
+      "prerequisites": [
+        "CI/CD pipelines",
+        "containerization",
+        "data product design"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "implementing_data_me_004",
+      "skill_name": "Establishing Organizational Structure for Data Mesh",
+      "category": "data_cleaning",
+      "subcategory": "data_governance",
+      "difficulty": "advanced",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "role definition",
+        "governance model",
+        "process alignment",
+        "domain ownership"
+      ],
+      "prerequisites": [
+        "data governance",
+        "organizational design",
+        "project management"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "implementing_data_me_005",
+      "skill_name": "Designing Data Product Architecture",
+      "category": "data_cleaning",
+      "subcategory": "data_product_architecture",
+      "difficulty": "advanced",
+      "depth": 0,
+      "tags": [],
+      "key_concepts": [
+        "artifact definition",
+        "development architecture",
+        "runtime services",
+        "operations management"
+      ],
+      "prerequisites": [
+        "software architecture",
+        "data modeling",
+        "API design"
+      ],
+      "related_skills": []
+    },
+    {
+      "skill_id": "implementing_data_me_006",
+      "skill_name": "Implementing Data Contracts",
+      "category": "data_cleaning",
+      "subcategory": "data_contracts",
+      "difficulty": "intermediate",
+      "depth": 1,
+      "tags": [],
+      "key_concepts": [
+        "contract definition",
+        "version control",
+        "semantic standards",
+        "quality of service"
+      ],
+      "prerequisites": [
+        "API contract design",
+        "data governance",
+        "metadata standards"
+      ],
+      "related_skills": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "Stream Processing Fundamentals",
+      "to": "Push vs Pull Queries",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Stream Processing Fundamentals",
+      "to": "Stateful Stream Transformations",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Stream Processing Fundamentals",
+      "to": "Consistency Models in Stream Processing",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Linear Algebra for Data Analysis",
+      "to": "Growth Decomposition Analysis",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Apply Advanced Data Processing with Ray",
+      "to": "Apply Advanced Data Processing with Ray",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Probability and Distributions",
+      "to": "Hypothesis Testing and Inference",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Linear Algebra for Data Analysis",
+      "to": "Gradient Descent Optimization",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Linear Algebra for Data Analysis",
+      "to": "Machine Learning Fundamentals",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Machine Learning Fundamentals",
+      "to": "k-Nearest Neighbors Classification",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Probability and Distributions",
+      "to": "Naive Bayes Classification",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Machine Learning Fundamentals",
+      "to": "Naive Bayes Classification",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Linear Algebra for Data Analysis",
+      "to": "Simple Linear Regression",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Simple Linear Regression",
+      "to": "Multiple Linear Regression",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Implementing Financial Data Governance Frameworks",
+      "to": "Building a Data Mesh Fabric",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Implementing Financial Data Governance Frameworks",
+      "to": "Establishing Organizational Structure for Data Mesh",
+      "type": "prerequisite",
+      "strength": 1.0
+    },
+    {
+      "from": "Implementing Financial Data Governance Frameworks",
+      "to": "Implementing Data Contracts",
+      "type": "prerequisite",
+      "strength": 1.0
+    }
+  ],
+  "metadata": {
+    "total_skills": 62,
+    "total_edges": 16,
+    "categories": [
+      "time_series",
+      "risk_metrics",
+      "portfolio_analysis",
+      "data_cleaning",
+      "visualization",
+      "statistical_methods",
+      "data_science"
+    ],
+    "foundational_skills": [
+      "Stream Processing Fundamentals",
+      "Materialized Views Construction",
+      "Change Data Capture (CDC)",
+      "Serving Synchronous and Asynchronous Data",
+      "Streaming Database Architecture",
+      "Designing Actionable, Timely, and Relevant Metrics",
+      "Metrics Decomposition",
+      "2\u00d72 Experimental Design",
+      "Building Data-Driven Business Cases",
+      "Lift Analysis",
+      "Data Storytelling and Narrative Development",
+      "Implement Stateful Applications with Ray Actors",
+      "Build Workflow Management in Ray",
+      "Use Ray for Batch and Stream Processing",
+      "Build Microservices with Ray Serve",
+      "Implement Reliable Ray Applications",
+      "Integrate Apache Kafka with Ray for Streaming",
+      "Designing Financial Data Identification and Entity Systems",
+      "Implementing Financial Data Governance Frameworks",
+      "Building Financial Data Pipelines with Open Source Tools and APIs"
+    ],
+    "critical_skills": [
+      "Linear Algebra for Data Analysis",
+      "Stream Processing Fundamentals",
+      "Implementing Financial Data Governance Frameworks"
+    ]
+  }
+}
